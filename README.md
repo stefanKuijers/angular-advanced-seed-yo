@@ -17,15 +17,19 @@ To setup this repo I went through the following steps
 
 ## Installation
 1. $ npm install -g generator-angular
-2. $ mkdir <folderName> && cd <folderName>
-3. $ yo angular <appName>
+2. $ mkdir \<folderName\> && cd $_
+3. $ yo angular \<appName\>
     *. Sass? Y
     *. Twitter Bootstrap? n
     *. Choose Angular modules
+4. $ bower install bootstrap-css-only --save
+5. $ bower install font-awesome --save
 
 ## Verifing installation
 1. Check or folders are created
-2. Check or grunt commands run ( $ grunt | $ grunt serve | $ grunt test )
+2. Check or basic grunt commands run ( $ grunt )
+3. Run the grunt server ( $ grunt serve )
+4. Get coding
 
 
 # TODO
