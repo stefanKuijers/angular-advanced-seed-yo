@@ -33,9 +33,9 @@ To setup this repo I went through the following steps
 
 
 # TODO
-[ ] rescaffold cause generator is updated
-[ ] Setup ui-router
-[ ] Strip down
-[ ] Change folder structure
-[ ] Setup to have similar features to the original angular advanced seed project
-[ ] Change to Mocha/Sinon
+- [ ] rescaffold cause generator is updated
+- [ ] Setup ui-router
+- [ ] Strip down
+- [ ] Change folder structure
+- [ ] Setup to have similar features to the original angular advanced seed project
+- [ ] Change to Mocha/Sinon
