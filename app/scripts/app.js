@@ -2,19 +2,32 @@
 
 /**
  * @ngdoc overview
- * @name aasApp
+ * @name aasyApp
  * @description
- * # aasApp
+ * # aasyApp
  *
  * Main module of the application.
  */
 angular
-  .module('aasApp', [
+  .module('aasyApp', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
-    'ngMessages',
     'ngResource',
+    'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ]);
+  ])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
