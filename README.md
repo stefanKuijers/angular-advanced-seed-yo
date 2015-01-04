@@ -19,9 +19,9 @@ To setup this repo I went through the following steps
 1. $ npm install -g generator-angular
 2. $ mkdir \<folderName\> && cd $_
 3. $ yo angular \<appName\>
---* Sass? Y
---* Twitter Bootstrap? n
---* Choose Angular modules
+  - Sass? Y
+  - Twitter Bootstrap? n
+  - Choose Angular modules
 4. $ bower install bootstrap-css-only --save
 5. $ bower install font-awesome --save
 
