@@ -14,6 +14,12 @@ To setup this repo I went through the following steps
 3. $ npm install -g grunt-cli
 4. $ npm install -g yo
 5. $ npm install -g bower
+6. Ruby installed
+7. $ gem install sass 
+  If any problems with a certificate download the gem via http.
+  Set the source to try on http if https fails by the following command
+  - $ gem sources --add http://rubygems.org 
+8. $ gem install compass
 
 ## Installation
 1. $ npm install -g generator-angular
@@ -27,13 +33,33 @@ To setup this repo I went through the following steps
 
 ## Verifing installation
 1. Check or folders are created
-2. Check or basic grunt commands run ( $ grunt )
+2. Check or basic grunt commands run
+  - $ grunt 
+  - $ grunt test
 3. Run the grunt server ( $ grunt serve )
-4. Get coding
+
+## Installing further components and modules to enhance workflow
+1. $ bower install bootstrap-css-only --save
+  --save saves the plugin as a dependency of the project.
+  If someone clones the repo they only have to run [$ bower install]
+  and they get all bower components they need
+1. $ bower install font-awesome --save 
+3. $ npm install grunt-remove-logging --save-dev 
+  --save-dev saves it as a development dependency
+
+# Distributing the workflow
+In case you want to use this workflow or distibute it to other colleagues follow the following steps.
+
+1. Make sure Setup > Prequisits are fullfilled on the computer
+2. Clone repo 
+3. $ npm install
+4. $ bower install
+5. 
 
 
 # TODO
-- [ ] rescaffold cause generator is updated
+- [x] rescaffold cause generator is updated
+- [ ] intergrate grunt-remove-logging into the grunt build task set
 - [ ] Setup ui-router
 - [ ] Strip down
 - [ ] Change folder structure

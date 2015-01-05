@@ -2,16 +2,18 @@
 
 /**
  * @ngdoc overview
- * @name aasyApp
+ * @name aasyoApp
  * @description
- * # aasyApp
+ * # aasyoApp
  *
  * Main module of the application.
  */
 angular
-  .module('aasyApp', [
+  .module('aasyoApp', [
     'ngAnimate',
+    'ngAria',
     'ngCookies',
+    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
