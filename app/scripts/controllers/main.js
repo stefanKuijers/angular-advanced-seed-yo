@@ -14,4 +14,6 @@ angular.module('aasyoApp')
       'AngularJS',
       'Karma'
     ];
+
+    console.log('a log from here');
   });

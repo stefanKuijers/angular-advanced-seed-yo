@@ -59,7 +59,7 @@ In case you want to use this workflow or distibute it to other colleagues follow
 
 # TODO
 - [x] rescaffold cause generator is updated
-- [ ] intergrate grunt-remove-logging into the grunt build task set
+- [x] intergrate grunt-remove-logging into the grunt build task set
 - [ ] Setup ui-router
 - [ ] Strip down
 - [ ] Change folder structure

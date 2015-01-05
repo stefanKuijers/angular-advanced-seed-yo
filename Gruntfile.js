@@ -160,7 +160,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Automatically inject Bower components into the app
+    // Automagically inject Bower components into the app
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
@@ -199,6 +199,13 @@ module.exports = function (grunt) {
           debugInfo: true
         }
       }
+    },
+
+    // removes any console logs from javascript code
+    removelogging: {
+        dist: {
+            src: '<%= yeoman.dist %>/scripts/*.js'// Each file will be overwritten with the output!
+        }
     },
 
     // Renames files for browser caching purposes
@@ -425,7 +432,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'removelogging'
   ]);
 
   grunt.registerTask('default', [
