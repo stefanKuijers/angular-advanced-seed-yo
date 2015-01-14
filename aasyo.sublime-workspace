@@ -523,8 +523,16 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2024,
+				"buffer_size": 2049,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1203,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -866,6 +874,12 @@
 	],
 	"file_history":
 	[
+		"/C/dev/aas-yeoman/app/scripts/controllers/main.js",
+		"/C/dev/aas-yeoman/package.json",
+		"/C/dev/aas-yeoman/Gruntfile.js",
+		"/C/dev/aas-yeoman/dist/scripts/scripts.c5d1ff81.js",
+		"/C/dev/aas-yeoman/README.md",
+		"/C/dev/aas-yeoman/bower_components/bootstrap-css-only/fonts/glyphicons-halflings-regular.svg",
 		"/C/dev/angular-advanced-seed/angular-advanced-seed/LICENSE",
 		"/C/dev/angular-advanced-seed/index.html",
 		"/C/Users/S/AppData/Roaming/Sublime Text 3/Packages/Git/Git.sublime-settings",
@@ -987,17 +1001,11 @@
 		"/C/Users/S/Desktop/werk/arteries/baptistamedia/ftpsync.settings",
 		"/C/Users/S/Desktop/werk/arteries/baptistamedia/Example multiple paged document.zip",
 		"/C/Users/S/Desktop/werk/arteries/baptistamedia/Checking page order with multiple paged documents.zip",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/model/Page.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/uploaded_files/CleanupFiles.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/view/page_filemanager-search-templates.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/vendor/composer/autoload_classmap.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/view/page_filemanager.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/include/api.json",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/composer.json"
+		"/C/Users/S/Desktop/werk/arteries/baptistamedia/model/Page.php"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -1180,7 +1188,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1189,15 +1197,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2024,
+						"buffer_size": 2049,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1723,
-								1723
+								633,
+								633
 							]
 						],
 						"settings":
@@ -1205,7 +1213,35 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "package.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								1108
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1264,6 +1300,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
 			[
 				"",
 				"index.html"

@@ -9,6 +9,7 @@ The base was generated using the yeoman angular generator.
 To setup this repo I went through the following steps
 
 ## Prequisits
+Before you start make sure your username does not contain accented latin characters
 1. Node installed
 2. Git installed
 3. $ npm install -g grunt-cli
@@ -60,8 +61,9 @@ In case you want to use this workflow or distibute it to other colleagues follow
 # TODO
 - [x] rescaffold cause generator is updated
 - [x] intergrate grunt-remove-logging into the grunt build task set
-- [ ] Setup ui-router
 - [ ] Strip down
 - [ ] Change folder structure
+- [ ] Setup ui-router
+- [ ] setup grunt-notify
 - [ ] Setup to have similar features to the original angular advanced seed project
 - [ ] Change to Mocha/Sinon
