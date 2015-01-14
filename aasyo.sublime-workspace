@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"__",
+				"__example_snippet	js_example_snippet"
+			],
+			[
 				"backgroun",
 				"background-size"
 			],
@@ -74,10 +78,6 @@
 			[
 				"ea",
 				"each	$.each()"
-			],
-			[
-				"__",
-				"__log	js_log"
 			],
 			[
 				"js-advanced-search",
@@ -519,13 +519,100 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "<!doctype html>\n<html class=\"no-js\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Angular Advanced Seed Yeoman</title>\n    <meta name=\"description\" content=\"\">\n    <meta name=\"viewport\" content=\"width=device-width\">\n\n    <!-- build:css(.) styles/vendor.css -->\n    <!-- bower:css -->\n    <link rel=\"stylesheet\" href=\"bower_components/bootstrap-css-only/css/bootstrap.css\" />\n    <link rel=\"stylesheet\" href=\"bower_components/font-awesome/css/font-awesome.css\" />\n    <!-- endbower -->\n    <!-- endbuild -->\n    <!-- build:css(.tmp) styles/main.css -->\n    <link rel=\"stylesheet\" href=\"styles/main.css\">\n    <!-- endbuild -->\n  </head>\n  <body ng-app=\"aas\">\n    <!--[if lt IE 7]>\n      <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>\n    <![endif]-->\n\n    <!-- Add your site or application content here -->\n    <div class=\"container\">\n      <div class=\"header\">\n        <ul class=\"nav nav-pills pull-right\">\n          <li class=\"active\"><a ui-sref=\"home\">Home</a></li>\n          <li><a ui-sref=\"about\">About</a></li>\n          <li><a ui-sref=\"#\">Contact</a></li>\n        </ul>\n        <h3 class=\"text-muted\">aasyo</h3>\n      </div>\n\n      <div ui-view=\"\"></div>\n\n      <div class=\"footer\">\n        <p>Footer text</p>\n      </div>\n    </div>\n\n\n    <!-- build:js(.) scripts/oldieshim.js -->\n    <!--[if lt IE 9]>\n    <script src=\"bower_components/es5-shim/es5-shim.js\"></script>\n    <script src=\"bower_components/json3/lib/json3.js\"></script>\n    <![endif]-->\n    <!-- endbuild -->\n\n    <!-- build:js(.) scripts/vendor.js -->\n    <!-- bower:js -->\n    <script src=\"bower_components/angular/angular.js\"></script>\n    <script src=\"bower_components/angular-animate/angular-animate.js\"></script>\n    <script src=\"bower_components/angular-aria/angular-aria.js\"></script>\n    <script src=\"bower_components/angular-cookies/angular-cookies.js\"></script>\n    <script src=\"bower_components/angular-messages/angular-messages.js\"></script>\n    <script src=\"bower_components/angular-resource/angular-resource.js\"></script>\n    <script src=\"bower_components/angular-sanitize/angular-sanitize.js\"></script>\n    <script src=\"bower_components/angular-touch/angular-touch.js\"></script>\n    <script src=\"bower_components/ui-router/release/angular-ui-router.js\"></script>\n    <!-- endbower -->\n    <script src=\"asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js\"></script>\n    <!-- endbuild -->\n\n    <!-- build:js({.tmp,app}) scripts/scripts.js -->\n    <script src=\"app/shared/api/apiService.js\"></script>\n\n    <script src=\"app/component/home/homeController.js\"></script>\n    <script src=\"app/component/about/aboutController.js\"></script>\n\n    <script src=\"app/app.router.js\"></script>\n    <script src=\"app/app.module.js\"></script>\n    <!-- endbuild -->\n</body>\n</html>\n",
+			"file": "app/index.html",
+			"file_size": 2874,
+			"file_write_time": 130657282567792721,
+			"settings":
+			{
+				"buffer_size": 2874,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 2803,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 10103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/S/AppData/Roaming/Sublime Text 3/Packages/User/js_example_snippet.sublime-snippet",
+			"settings":
+			{
+				"buffer_size": 363,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/styles/main.scss",
+			"settings":
+			{
+				"buffer_size": 1478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/asset/sass/app.scss",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/spec/controllers/main.js",
+			"settings":
+			{
+				"buffer_size": 508,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1203,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/app/app.module.js",
+			"settings":
+			{
+				"buffer_size": 284,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app/app.router.js",
+			"settings":
+			{
+				"buffer_size": 1317,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 297.0,
+		"height": 185.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"mark",
 				"Set Syntax: Markdown"
@@ -621,10 +708,6 @@
 			[
 				"git ",
 				"Git: Commit"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"package ena",
@@ -859,15 +942,46 @@
 	"expanded_folders":
 	[
 		"/C/dev/aas-yeoman",
-		"/C/dev/aas-yeoman/src",
-		"/C/dev/aas-yeoman/src/app",
-		"/C/dev/aas-yeoman/src/asset",
-		"/C/dev/aas-yeoman/src/asset/lib",
-		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap",
-		"/C/dev/aas-yeoman/src/asset/sass"
+		"/C/dev/aas-yeoman/app",
+		"/C/dev/aas-yeoman/app/app/component",
+		"/C/dev/aas-yeoman/app/app/component/about",
+		"/C/dev/aas-yeoman/app/app/component/home",
+		"/C/dev/aas-yeoman/app/asset",
+		"/C/dev/aas-yeoman/app/styles",
+		"/C/dev/aas-yeoman/test",
+		"/C/dev/aas-yeoman/test/spec",
+		"/C/dev/aas-yeoman/test/spec/controllers"
 	],
 	"file_history":
 	[
+		"/C/dev/aas-yeoman/node_modules/grunt/node_modules/iconv-lite/test/main-test.js",
+		"/C/dev/aas-yeoman/node_modules/grunt/node_modules/glob/test/mark.js",
+		"/C/dev/aas-yeoman/test/.jshintrc",
+		"/C/dev/aas-yeoman/node_modules/grunt-remove-logging/test/test.js",
+		"/C/dev/aas-yeoman/node_modules/grunt/node_modules/rimraf/test/test-sync.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/shelljs/src/toEnd.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-karma/TODO.md",
+		"/C/dev/aas-yeoman/app/app/component/about/aboutView.html",
+		"/C/dev/aas-yeoman/app/app/component/about/aboutController.js",
+		"/C/dev/aas-yeoman/test/karma.conf.js",
+		"/C/dev/aas-yeoman/test/spec/controllers/about.js",
+		"/C/dev/aas-yeoman/test/spec/controllers/main.js",
+		"/C/dev/aas-yeoman/bower_components/es5-shim/Makefile",
+		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/lib/mozilla-ast.js",
+		"/C/dev/aas-yeoman/.sass-cache/b4ea2d8d220de07819659396c12f1507b717fb06/main.scssc",
+		"/C/dev/aas-yeoman/node_modules/karma/bin/karma",
+		"/C/dev/aas-yeoman/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/png-alpha.json",
+		"/C/dev/aas-yeoman/package.json",
+		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/.bin/uglifyjs",
+		"/C/dev/aas-yeoman/app/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/optimist/example/boolean_double.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/uglify-to-browserify/index.js",
+		"/C/dev/aas-yeoman/src/app/app.module.js",
+		"/C/dev/aas-yeoman/app/app/app.router.js",
+		"/C/dev/aas-yeoman/app/app/app.module.js",
+		"/C/dev/aas-yeoman/node_modules/grunt/appveyor.yml",
+		"/C/dev/aas-yeoman/app/scripts/app.js",
+		"/C/dev/aas-yeoman/aasyo.sublime-project",
 		"/C/dev/aas-yeoman/bower.json",
 		"/C/dev/aas-yeoman/src/asset/sass/_base.scss",
 		"/C/dev/aas-yeoman/README.md",
@@ -875,10 +989,7 @@
 		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.min.js",
 		"/C/dev/aas-yeoman/app/404.html",
 		"/C/dev/aas-yeoman/app/index.html",
-		"/C/dev/aas-yeoman/app/scripts/app.js",
 		"/C/dev/aas-yeoman/Gruntfile.js",
-		"/C/dev/aas-yeoman/app/app/app.module.js",
-		"/C/dev/aas-yeoman/app/app/app.router.js",
 		"/C/dev/aas-yeoman/app/app/component/home/homeView.html",
 		"/C/dev/aas-yeoman/app/app/component/home/homeController.js",
 		"/C/dev/aas-yeoman/app/app/shared/api/apiService.js",
@@ -896,7 +1007,6 @@
 		"/C/dev/aas-yeoman/node_modules/grunt-filerev/tasks/filerev.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/lib/core/resolvers/FsResolver.js",
 		"/C/dev/aas-yeoman/app/scripts/controllers/main.js",
-		"/C/dev/aas-yeoman/package.json",
 		"/C/dev/aas-yeoman/dist/scripts/scripts.c5d1ff81.js",
 		"/C/dev/aas-yeoman/bower_components/bootstrap-css-only/fonts/glyphicons-halflings-regular.svg",
 		"/C/dev/angular-advanced-seed/angular-advanced-seed/LICENSE",
@@ -971,31 +1081,7 @@
 		"/C/dev/vv_design/design_question_analysis.jpg",
 		"/C/dev/vv/controller/ControllerRegistration.php",
 		"/C/dev/vv/controller/ControllerLogin.php",
-		"/C/dev/vv/controller/Controller.php",
-		"/C/dev/vv/vv.sublime-project",
-		"/C/dev/vv/ftpsync.settings",
-		"/C/dev/vv/composer.lock",
-		"/C/dev/vv/composer.json",
-		"/C/dev/vv/api.php",
-		"/C/dev/vv/vendor/symfony/console/Symfony/Component/Console/Output/ConsoleOutput.php",
-		"/C/dev/vv/assets/fonts/font-awesome/scss/_variables.scss",
-		"/C/dev/vv/vendor/symfony/console/Symfony/Component/Console/Descriptor/DescriptorInterface.php",
-		"/C/dev/vv/assets/js/s_utils.js",
-		"/C/dev/vv/assets/plugins/date/date.js",
-		"/C/dev/vv/assets/plugins/parsley/CONTRIBUTING.md",
-		"/C/dev/vv/assets/plugins/parsley/src/config.js",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/illuminate/support/Illuminate/Support/helpers.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/assets/plugins/form2js/example/json2.js",
-		"/C/dev/blog_project/js/blog-app.js",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/vendor/phpmailer/phpmailer/examples/styles/shCoreDjango.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/vendor/phpmailer/phpmailer/examples/styles/shCoreDefault.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/vendor/phpmailer/phpmailer/examples/styles/shCore.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/vendor/illuminate/support/Illuminate/Support/Str.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/css/nv.d3.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreRDark.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreMidnight.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreMDUltra.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreFadeToGrey.css"
+		"/C/dev/vv/controller/Controller.php"
 	],
 	"find":
 	{
@@ -1006,6 +1092,7 @@
 		"height": 117.0,
 		"where_history":
 		[
+			"",
 			"C:\\Users\\S\\Desktop\\werk\\arteries\\baptistamedia",
 			"C:\\Users\\S\\Desktop\\werk\\arteries\\bible_school",
 			"",
@@ -1037,6 +1124,16 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"app",
+			"angular-route",
+			"karma",
+			"src",
+			"controller",
+			".js'",
+			"app",
+			".js'",
+			"appPats",
+			"'\n",
 			"ng-href",
 			"\"",
 			":",
@@ -1154,17 +1251,7 @@
 			"primary",
 			"filter",
 			"primaryFilters",
-			"select_type",
-			"filterForm",
-			"typeForm",
-			"result-tmp",
-			"generateBreadcrumbs",
-			"showAdvancedSearch",
-			":",
-			" function",
-			"$s_data",
-			"s_data",
-			"limit"
+			"select_type"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1182,8 +1269,291 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2874,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1259,
+								1259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2803,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2077,
+								2077
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								532,
+								532
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/S/AppData/Roaming/Sublime Text 3/Packages/User/js_example_snippet.sublime-snippet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"default_extension": "sublime-snippet",
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/styles/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								195
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/asset/sass/app.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "test/spec/controllers/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 508,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								314,
+								314
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								789,
+								789
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/app/app.module.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/app/app.router.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1238,16 +1608,40 @@
 		"selected_items":
 		[
 			[
-				"",
+				"inde",
 				"app\\index.html"
 			],
 			[
-				"index",
-				"app\\index.html"
+				"",
+				"C:\\Users\\S\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\js_example_snippet.sublime-snippet"
 			],
 			[
 				"read",
 				"README.md"
+			],
+			[
+				"kar",
+				"test\\karma.conf.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"index.",
+				"app\\index.html"
+			],
+			[
+				"app",
+				"src\\app\\app.module.js"
+			],
+			[
+				"index",
+				"app\\index.html"
 			],
 			[
 				"rea",
@@ -1264,10 +1658,6 @@
 			[
 				"bower",
 				"bower.json"
-			],
-			[
-				"grunt",
-				"Gruntfile.js"
 			],
 			[
 				"grun",
@@ -1304,10 +1694,6 @@
 			[
 				"chart",
 				"vv\\assets\\js\\chart-builder.js"
-			],
-			[
-				"index.",
-				"vv\\assets\\css\\index.css"
 			],
 			[
 				"questi",
@@ -1408,10 +1794,6 @@
 			[
 				"page_",
 				"baptistamedia\\view\\page_filemanager.php"
-			],
-			[
-				"inde",
-				"baptistamedia\\downloads\\index.php"
 			],
 			[
 				"file",
@@ -1628,7 +2010,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 412.0,
+	"side_bar_width": 307.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
