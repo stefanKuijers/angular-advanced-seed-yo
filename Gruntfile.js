@@ -97,7 +97,7 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('<%= path.tmp %>'),
+              connect.static('.tmp'),
               connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
-              connect.static('<%= path.tmp %>'),
+              connect.static('.tmp'),
               connect.static('<%= path.test %>'),
               connect().use(
                 '/bower_components',
@@ -341,10 +341,10 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
+            '<%= path.html %>',
             'images/{,*/}*.{webp}',
             'fonts/{,*/}*.*',
-            'app/**/*.*'
+            // 'app/**/*.*'
           ]
         }, {
           expand: true,

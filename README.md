@@ -52,9 +52,12 @@ Before you start make sure your username does not contain accented latin charact
 To make this repo fit as a seed for medium to large scale apps I decided to make more changes. If you just want to get started with Yeoman and Angular your journey ends here. I you want to use this seed project as is you can follow the instructions in the 'Distributing Workflow' section. I have implemented the following changes:
 1. [ ] Restructured the app after the component-grouped paradigm
 2. [ ] Updating all the grunt tasks to work again
-  - watching for file changes 
-  - compiling sass
-  - distribution
+  - [x] setting up new structure
+  - [x] watching for file changes 
+  - [x] compiling sass
+  - [x] unit tests
+  - [ ] cleaning up old files and paths
+  - [ ] distribution
 3. [x] Switched to ui-router:
   - $ bower uninstall angular-router --save
   - $ bower install ui-router --save
