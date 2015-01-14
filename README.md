@@ -48,6 +48,22 @@ Before you start make sure your username does not contain accented latin charact
 3. $ npm install grunt-remove-logging --save-dev 
   --save-dev saves it as a development dependency
 
+## Further Adjustments
+To make this repo fit as a seed for medium to large scale apps I decided to make more changes. If you just want to get started with Yeoman and Angular your journey ends here. I you want to use this seed project as is you can follow the instructions in the 'Distributing Workflow' section. I have implemented the following changes:
+1. [ ] Restructured the app after the component-grouped paradigm
+2. [ ] For this the gruntFile needed a big change as well to point all the tasks to the right folders
+3. [x] Switched to ui-router:
+  - $ bower uninstall angular-router --save
+  - $ bower install ui-router --save
+  - rewrote the router code
+4. [x] Installing angular bootstrap
+  - $ bower install angular-bootstrap --save
+  - if you have any problems just go to http://angular-ui.github.io/bootstrap/ and download it from there
+5. [ ] Setup grunt notify:
+  - $ npm install grunt-notify --save-dev
+6. [ ] Switched from jasmine to Mocha/Sinon
+7. [ ] Write some meaningfull tests
+
 # Distributing the workflow
 In case you want to use this workflow or distibute it to other colleagues follow the following steps.
 
@@ -56,14 +72,3 @@ In case you want to use this workflow or distibute it to other colleagues follow
 3. $ npm install
 4. $ bower install
 5. 
-
-
-# TODO
-- [x] rescaffold cause generator is updated
-- [x] intergrate grunt-remove-logging into the grunt build task set
-- [ ] Strip down
-- [ ] Change folder structure
-- [ ] Setup ui-router
-- [ ] setup grunt-notify
-- [ ] Setup to have similar features to the original angular advanced seed project
-- [ ] Change to Mocha/Sinon

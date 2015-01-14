@@ -519,29 +519,17 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 2049,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 1203,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 409.0,
+		"height": 297.0,
 		"selected_items":
 		[
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
 			[
 				"pull",
 				"Git (SideBarGit): Pull"
@@ -870,15 +858,46 @@
 	},
 	"expanded_folders":
 	[
-		"/C/dev/aas-yeoman"
+		"/C/dev/aas-yeoman",
+		"/C/dev/aas-yeoman/src",
+		"/C/dev/aas-yeoman/src/app",
+		"/C/dev/aas-yeoman/src/asset",
+		"/C/dev/aas-yeoman/src/asset/lib",
+		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap",
+		"/C/dev/aas-yeoman/src/asset/sass"
 	],
 	"file_history":
 	[
+		"/C/dev/aas-yeoman/bower.json",
+		"/C/dev/aas-yeoman/src/asset/sass/_base.scss",
+		"/C/dev/aas-yeoman/README.md",
+		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js",
+		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.min.js",
+		"/C/dev/aas-yeoman/app/404.html",
+		"/C/dev/aas-yeoman/app/index.html",
+		"/C/dev/aas-yeoman/app/scripts/app.js",
+		"/C/dev/aas-yeoman/Gruntfile.js",
+		"/C/dev/aas-yeoman/app/app/app.module.js",
+		"/C/dev/aas-yeoman/app/app/app.router.js",
+		"/C/dev/aas-yeoman/app/app/component/home/homeView.html",
+		"/C/dev/aas-yeoman/app/app/component/home/homeController.js",
+		"/C/dev/aas-yeoman/app/app/shared/api/apiService.js",
+		"/C/dev/aas-yeoman/src/index.html",
+		"/C/dev/aas-yeoman/src/asset/sass/app.scss",
+		"/C/dev/aas-yeoman/src/asset/sass/_variables.scss",
+		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/node_modules/mout/lang/isNull.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/node_modules/mout/object/hasOwn.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-contrib-htmlmin/tasks/htmlmin.js",
+		"/C/dev/aas-yeoman/bower_components/angular-route/angular-route.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/node_modules/retry/lib/retry_operation.js",
+		"/C/dev/aas-yeoman/src/app.module.js",
+		"/C/dev/aas-yeoman/src/app.router.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-svgmin/node_modules/svgo/node_modules/sax/test/buffer-overrun.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-filerev/tasks/filerev.js",
+		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/lib/core/resolvers/FsResolver.js",
 		"/C/dev/aas-yeoman/app/scripts/controllers/main.js",
 		"/C/dev/aas-yeoman/package.json",
-		"/C/dev/aas-yeoman/Gruntfile.js",
 		"/C/dev/aas-yeoman/dist/scripts/scripts.c5d1ff81.js",
-		"/C/dev/aas-yeoman/README.md",
 		"/C/dev/aas-yeoman/bower_components/bootstrap-css-only/fonts/glyphicons-halflings-regular.svg",
 		"/C/dev/angular-advanced-seed/angular-advanced-seed/LICENSE",
 		"/C/dev/angular-advanced-seed/index.html",
@@ -976,32 +995,7 @@
 		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreRDark.css",
 		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreMidnight.css",
 		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreMDUltra.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreFadeToGrey.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreEmacs.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreEclipse.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreDjango.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreDefault.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCore.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/illuminate/support/Illuminate/Support/Str.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/assets/plugins/summernote/summernote.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/assets/plugins/form-wizard/form-wizard.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/assets/css/main.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/assets/plugins/summernote/summernote.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/assets/plugins/form-wizard/form-wizard.css",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/assets/css/main.css",
-		"/C/dev/blog_project/css/style.css",
-		"/C/dev/blog_project/js/lib/angular.min.js",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/downloads/index.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/model/Filemanager.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/model/User.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/assets/js/search.js",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/include/Validator.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/include/Autoload.php",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/uploaded_files/d268f959431f8737bb04bf8ea98c38cf.pdf",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/ftpsync.settings",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/Example multiple paged document.zip",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/Checking page order with multiple paged documents.zip",
-		"/C/Users/S/Desktop/werk/arteries/baptistamedia/model/Page.php"
+		"/C/Users/S/Desktop/werk/arteries/baptistamedia/test/vendor/phpmailer/phpmailer/examples/styles/shCoreFadeToGrey.css"
 	],
 	"find":
 	{
@@ -1040,9 +1034,29 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"ng-href",
+			"\"",
+			":",
+			"yeoman.app",
+			"compass",
+			"ig.dist %>/",
+			"appConfig.app",
+			"test/",
+			"sourceFolder",
+			":",
+			"<%= pathConfig.",
+			"Path",
+			"yeoman",
+			"Path",
+			"yeoman",
+			":",
+			"basePath",
+			"yeoman.app",
+			":",
+			"spp",
 			"7",
 			"$db",
 			"forgetLogin",
@@ -1150,27 +1164,7 @@
 			" function",
 			"$s_data",
 			"s_data",
-			"limit",
-			" ",
-			"= ",
-			"] =",
-			"search",
-			"return false",
-			"mcw",
-			"cg",
-			":",
-			"=",
-			"4",
-			"res.blocks",
-			"12",
-			"blockWidth",
-			"[\"",
-			"name",
-			"php",
-			"this",
-			"console",
-			"dirID",
-			"ms"
+			"limit"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1188,65 +1182,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2049,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								633,
-								633
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 216.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "package.json",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1203,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								92,
-								1108
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1301,16 +1238,40 @@
 		"selected_items":
 		[
 			[
-				"grun",
-				"Gruntfile.js"
+				"",
+				"app\\index.html"
+			],
+			[
+				"index",
+				"app\\index.html"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"home",
+				"app\\app\\component\\home\\homeController.js"
+			],
+			[
+				"router",
+				"app\\app\\app.router.js"
+			],
+			[
+				"bower",
+				"bower.json"
 			],
 			[
 				"grunt",
 				"Gruntfile.js"
 			],
 			[
-				"",
-				"index.html"
+				"grun",
+				"Gruntfile.js"
 			],
 			[
 				"controllve",
@@ -1359,10 +1320,6 @@
 			[
 				"db.",
 				"vv\\include\\DB.php"
-			],
-			[
-				"index",
-				"vv\\assets\\css\\index.css"
 			],
 			[
 				"char",
@@ -1630,7 +1587,7 @@
 		[
 			[
 				"",
-				"C:\\dev\\basic-grunt\\basic-grunt.sublime-project"
+				"C:\\dev\\angular-advanced-seed\\aas.sublime-project"
 			],
 			[
 				"bas",
@@ -1671,7 +1628,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 268.0,
+	"side_bar_width": 412.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

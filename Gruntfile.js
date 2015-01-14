@@ -1,4 +1,3 @@
-// Generated on 2015-01-05 using generator-angular 0.10.0
 'use strict';
 
 // # Globbing
@@ -15,10 +14,25 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  // folder names
+  var folders = {
+    source      : 'app',
+    test        : 'test',
+    distribution: 'dist'
+  };
+
   // Configurable paths for the application
   var appConfig = {
-    app: require('./bower.json').appPath || 'app',
+    app: 'app',
     dist: 'dist'
+  };
+
+  var paths = {
+    js   : 'app/app/**/*.js',
+    sass : 'app/asset/sass/*.scss',
+    // css  : 'app/app/**/*.js',
+    html : 'app/app/**/*.html',
+    image: 'app/asset/image/*.{png,jpg,jpeg,gif,webp,svg}'
   };
 
   // Define the configuration for all the tasks
@@ -26,6 +40,8 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
+    folder: folders,
+    path  : paths,
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -34,8 +50,8 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        files: ['<%= path.js %>'],
+        tasks: ['karma'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -119,7 +135,7 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
+          'app/app/components/{,*/}*.js',
         ]
       },
       test: {
@@ -179,7 +195,7 @@ module.exports = function (grunt) {
         cssDir: '.tmp/styles',
         generatedImagesDir: '.tmp/images/generated',
         imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
+        javascriptsDir: 'app/app/',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
         importPath: './bower_components',
         httpImagesPath: '/images',
@@ -247,32 +263,6 @@ module.exports = function (grunt) {
         assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
       }
     },
-
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
 
     imagemin: {
       dist: {
@@ -348,7 +338,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'fonts/{,*/}*.*',
+            'app/**/*.*'
           ]
         }, {
           expand: true,

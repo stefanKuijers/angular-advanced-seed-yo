@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name aasyoApp
- * @description
- * # aasyoApp
- *
- * Main module of the application.
- */
 angular
   .module('aasyoApp', [
     'ngAnimate',
