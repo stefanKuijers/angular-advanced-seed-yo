@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 angular.module('aas.component.about.controller', ['aas.shared.api.service'])
     .controller('AboutController', ['API', function(API) {

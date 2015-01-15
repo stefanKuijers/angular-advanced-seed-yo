@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"$root",
+				"$rootScope	AngularJS"
+			],
+			[
 				"__",
 				"__example_snippet	js_example_snippet"
 			],
@@ -510,10 +514,6 @@
 			[
 				"sh",
 				"show_notification"
-			],
-			[
-				"on",
-				"ongoing"
 			]
 		]
 	},
@@ -531,18 +531,80 @@
 			"file": "Gruntfile.js",
 			"settings":
 			{
-				"buffer_size": 10402,
+				"buffer_size": 10445,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "angular-advanced-seed-yo\n========================\n\n# Description\nAn angular seed for medium to large web applications.\nThe base was generated using the yeoman angular generator.\n\nThe purpose of this seed is to make it easy to start of angular projects in a proper workflow.\n\n\n# Distributing the workflow\nIn case you want to use this workflow or distibute it to colleagues follow the following steps.\n\n## Prerequisits\nThese are dependencies of which you probably already have most installed.\n\n1. Node, Git and Ruby installed\n2. $ npm install -g grunt-cli && npm install -g bower\n3. $ (gem install sass) && gem install compass\n\n## Kickstart your project\nWhen you have successfully installed the prerequisits\n1. (optionally fork first) Clone repo \n2. $ npm install && bower install\n3. $ cd <>\n\n\n# Initial Setup\nTo setup this repo I went through the following steps\n\n## Prerequisits\nBefore you start make sure your username does not contain accented latin characters.\n\n1. Node installed\n2. Git installed\n3. $ npm install -g grunt-cli\n4. $ npm install -g yo\n5. $ npm install -g bower\n6. Ruby installed\n7. $ gem install sass \n  If any problems with a certificate download the gem via http.\n  Set the source to try on http if https fails by the following command\n  - $ gem sources --add http://rubygems.org \n8. $ gem install compass\n\n## Installation\n1. $ npm install -g generator-angular\n2. $ mkdir \\<folderName\\> && cd $_\n3. $ yo angular \\<appName\\>\n  - Sass? Y\n  - Twitter Bootstrap? n\n  - Choose Angular modules\n4. $ bower install bootstrap-css-only --save\n5. $ bower install font-awesome --save\n\n## Verifing installation\n1. Check or folders are created\n2. Check or basic grunt commands run\n  - $ grunt \n  - $ grunt test\n3. Run the grunt server ( $ grunt serve )\n\n## Installing further components and modules to enhance workflow\n1. $ bower install bootstrap-css-only --save\n  --save saves the plugin as a dependency of the project.\n  If someone clones the repo they only have to run [$ bower install]\n  and they get all bower components they need\n1. $ bower install font-awesome --save \n3. $ npm install grunt-remove-logging --save-dev \n  --save-dev saves it as a development dependency\n\n## Further Adjustments\nTo make this repo fit as a seed for medium to large scale apps I decided to make more changes. If you just want to get started with Yeoman and Angular your journey ends here. I you want to use this seed project as is you can follow the instructions in the 'Distributing Workflow' section. I have implemented the following changes:\n1. [ ] Restructured the app after the component-grouped paradigm\n2. [ ] Updating all the grunt tasks to work again\n  - [x] setting up new structure\n  - [x] watching for file changes \n  - [x] compiling sass\n  - [x] unit tests\n  - [-] cleaning up old files and paths\n  - [ ] distribution\n3. [x] Switched to ui-router:\n  - $ bower uninstall angular-router --save\n  - $ bower install ui-router --save\n  - rewrote the router code\n4. [x] Installing angular bootstrap\n  - $ bower install angular-bootstrap --save\n  - if you have any problems just go to http://angular-ui.github.io/bootstrap/ and download it from there\n5. [ ] Setup grunt notify:\n  - $ npm install grunt-notify --save-dev\n6. [ ] Switched from jasmine to Mocha/Sinon\n7. [ ] Write some meaningfull tests\n",
-			"file": "README.md",
-			"file_size": 3004,
-			"file_write_time": 130657797514672059,
+			"contents": "'use strict';\n\nangular\n    .module('aas.shared.api.service', [])\n    .service('API', ['$http', '$q', function( $http, $q ) {\n        console.log( 'API service loaded' );\n\n        // the API object\n        return {\n            search: function( searchterm ) {\n                console.log('API: search called');\n                var searchPromise = $q.defer();\n\n                searchPromise.notify('sending search request with searchterm: ' + searchterm + 'to the server');\n\n                $http.get('/someUrl').\n                    success(function( data ) {\n                        searchPromise.resolve( data );\n                    }).\n                    error(function( data, status, headers, config ) {\n                        searchPromise.reject( data, status, headers, config );\n                    });\n\n                return searchPromise.promise;\n            }\n        \n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.home.controller', ['aas.shared.api.service'])\n    .controller('HomeController', ['API', function(API) {\n        var vm = this;\n\n        console.log( API );\n\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.about.controller', ['aas.shared.api.service'])\n    .controller('AboutController', ['API', function(API) {\n        var vm = this;\n\n        window.console.log( API );\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module(\n    'aas.router', \n    [\n        'aas.component.home.controller',\n        'aas.component.about.controller'\n        // 'aas.component.project.controller',\n        // 'aas.component.myProfile.controller',\n    ]\n).config(\n    ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {\n\n        $stateProvider\n            .state('home', {\n                url:                     '/',\n                controller:              'HomeController',\n                controllerAs:            'homeCtrl',\n                templateUrl:             'app/component/home/homeView.html'\n            })\n            .state('about', {\n                url:                     '/about',\n                controller:              'AboutController',\n                controllerAs:            'aboutCtrl',\n                templateUrl:             'app/component/about/aboutView.html'\n            })\n            // .state('project', {\n            //     url:                     '/project/:id',\n            //     controller:              'ProjectController',\n            //     controllerAs:            'projectCtrl',\n            //     templateUrl:             'app/component/project/projectView.html'\n            // })\n        ;\n\n        $urlRouterProvider.otherwise('/');\n    }]\n);\n'use strict';\n\nwindow.App = angular.module(\n    'aas', \n    [\n      'ngAnimate',\n\n      'ui.router',\n      'ui.bootstrap',\n\n      'aas.router'\n      // 'aas.shared.layout.menu.controller'\n    ]\n).run(['$rootScope', function( $rootScope ) {\n        console.log( 'app init' );\n    }]\n);",
+			"file": "dist/scripts/scripts.js",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 3299,
+				"buffer_size": 3225,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "'use strict';\n\nangular\n    .module('aas.shared.api.service', [])\n    .service('API', ['$http', '$q', function( $http, $q ) {\n        \n\n        // the API object\n        return {\n            search: function( searchterm ) {\n                \n                var searchPromise = $q.defer();\n\n                searchPromise.notify('sending search request with searchterm: ' + searchterm + 'to the server');\n\n                $http.get('/someUrl').\n                    success(function( data ) {\n                        searchPromise.resolve( data );\n                    }).\n                    error(function( data, status, headers, config ) {\n                        searchPromise.reject( data, status, headers, config );\n                    });\n\n                return searchPromise.promise;\n            }\n        \n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.home.controller', ['aas.shared.api.service'])\n    .controller('HomeController', ['API', function(API) {\n        var vm = this;\n\n        \n\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.about.controller', ['aas.shared.api.service'])\n    .controller('AboutController', ['API', function(API) {\n        var vm = this;\n\n        \n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module(\n    'aas.router', \n    [\n        'aas.component.home.controller',\n        'aas.component.about.controller'\n        // 'aas.component.project.controller',\n        // 'aas.component.myProfile.controller',\n    ]\n).config(\n    ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {\n\n        $stateProvider\n            .state('home', {\n                url:                     '/',\n                controller:              'HomeController',\n                controllerAs:            'homeCtrl',\n                templateUrl:             'app/component/home/homeView.html'\n            })\n            .state('about', {\n                url:                     '/about',\n                controller:              'AboutController',\n                controllerAs:            'aboutCtrl',\n                templateUrl:             'app/component/about/aboutView.html'\n            })\n            // .state('project', {\n            //     url:                     '/project/:id',\n            //     controller:              'ProjectController',\n            //     controllerAs:            'projectCtrl',\n            //     templateUrl:             'app/component/project/projectView.html'\n            // })\n        ;\n\n        $urlRouterProvider.otherwise('/');\n    }]\n);\n'use strict';\n\nwindow.App = angular.module(\n    'aas', \n    [\n      'ngAnimate',\n\n      'ui.router',\n      'ui.bootstrap',\n\n      'aas.router'\n      // 'aas.shared.layout.menu.controller'\n    ]\n).run(['$rootScope', function( $rootScope ) {\n        \n    }]\n);",
+			"file": "dist/scripts/scripts.eb5061b9.js",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 3084,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1203,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/app/component/about/aboutController.js",
+			"settings":
+			{
+				"buffer_size": 362,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app/component/home/homeController.js",
+			"settings":
+			{
+				"buffer_size": 354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app/app.router.js",
+			"settings":
+			{
+				"buffer_size": 1320,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "'use strict';\n\nwindow.App = angular.module(\n    'aas', \n    [\n      'ngAnimate',\n\n      'ui.router',\n      'ui.bootstrap',\n\n      'aas.router'\n      // 'aas.shared.layout.menu.controller'\n    ]\n).run(['$rootScope', function( $rootScope ) {\n        console.log( $rootScope );\n    }]\n);",
+			"file": "app/app/app.module.js",
+			"file_size": 300,
+			"file_write_time": 130657265054249336,
+			"settings":
+			{
+				"buffer_size": 284,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 3421,
 				"line_ending": "Windows"
 			}
 		}
@@ -887,11 +949,22 @@
 	[
 		"/C/dev/aas-yeoman",
 		"/C/dev/aas-yeoman/app",
-		"/C/dev/aas-yeoman/dist",
-		"/C/dev/aas-yeoman/dist/styles"
+		"/C/dev/aas-yeoman/app/app/component",
+		"/C/dev/aas-yeoman/app/app/component/about",
+		"/C/dev/aas-yeoman/app/app/component/home",
+		"/C/dev/aas-yeoman/app/app/shared",
+		"/C/dev/aas-yeoman/app/app/shared/api",
+		"/C/dev/aas-yeoman/dist"
 	],
 	"file_history":
 	[
+		"/C/dev/aas-yeoman/dist/scripts/scripts.6d1a9ebf.js",
+		"/C/dev/aas-yeoman/dist/scripts/scripts.js",
+		"/C/dev/aas-yeoman/aasyo.sublime-project",
+		"/C/dev/aas-yeoman/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/region-usage-json/alt-oc.json",
+		"/C/dev/aas-yeoman/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/outline.json",
+		"/C/dev/aas-yeoman/app/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js",
+		"/C/dev/aas-yeoman/dist/scripts/scripts.aab026c9.js",
 		"/C/dev/aas-yeoman/.editorconfig",
 		"/C/dev/aas-yeoman/.bowerrc",
 		"/C/dev/aas-yeoman/app/app/app.router.js",
@@ -918,7 +991,6 @@
 		"/C/dev/aas-yeoman/bower_components/font-awesome/scss/_core.scss",
 		"/C/dev/aas-yeoman/.sass-cache/603178942ee4c6e61122dae790c2a2d014ca409e/_variables.scssc",
 		"/C/dev/aas-yeoman/.sass-cache/603178942ee4c6e61122dae790c2a2d014ca409e/app.scssc",
-		"/C/dev/aas-yeoman/aasyo.sublime-project",
 		"/C/dev/aas-yeoman/.gitattributes",
 		"/C/dev/aas-yeoman/node_modules/grunt-ng-annotate/node_modules/ng-annotate/node_modules/acorn/tools/generate-identifier-regex.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/lib/core/resolvers/GitResolver.js",
@@ -942,7 +1014,6 @@
 		"/C/dev/aas-yeoman/node_modules/karma/bin/karma",
 		"/C/dev/aas-yeoman/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/png-alpha.json",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/.bin/uglifyjs",
-		"/C/dev/aas-yeoman/app/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/optimist/example/boolean_double.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/uglify-to-browserify/index.js",
 		"/C/dev/aas-yeoman/src/app/app.module.js",
@@ -1014,12 +1085,7 @@
 		"/C/dev/vv/vendor/phpunit/phpunit/src/Framework/Constraint/IsNull.php",
 		"/C/dev/vv/.htaccess",
 		"/C/dev/vv/view_survey/question_type1.php",
-		"/C/dev/vv/view_survey/question_type2.php",
-		"/C/dev/vv/view_admin/page_question-detail.php",
-		"/C/dev/vv/assets/js/survey-list.js",
-		"/C/dev/vv/script.php",
-		"/C/dev/vv/view_admin/page_survey_add.php",
-		"/C/dev/vv/view_survey/page_surveytemplate2.php"
+		"/C/dev/vv/view_survey/question_type2.php"
 	],
 	"find":
 	{
@@ -1062,6 +1128,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"concat",
+			"uglifyjs",
+			"\"",
+			"route",
+			"\"",
+			"View.html",
 			"sass",
 			"yeoman.app",
 			"yeoman.dist",
@@ -1183,13 +1255,7 @@
 			"saveSearchData",
 			"$(\"#search\").val()",
 			"SearchTerm",
-			"searchTerm",
-			"SearchTerm",
-			"searchTerm",
-			"js-result-row result-ro",
-			"Advanced Search In: ",
-			"= \"",
-			"\""
+			"searchTerm"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1207,7 +1273,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1235,7 +1301,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1244,15 +1310,43 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10402,
+						"buffer_size": 10445,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4732,
-								4732
+								9914,
+								9914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 7540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dist/scripts/scripts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1260,27 +1354,195 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": -0.0,
-						"translation.y": 3480.0,
+						"translation.y": 1560.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "README.md",
+					"buffer": 3,
+					"file": "dist/scripts/scripts.eb5061b9.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3299,
+						"buffer_size": 3084,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								577,
-								577
+								1504,
+								1504
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								694,
+								694
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/app/component/about/aboutController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								362,
+								362
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/app/component/home/homeController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								354,
+								354
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/app/app.router.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								934,
+								934
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/app/app.module.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2845,
+								2845
 							]
 						],
 						"settings":
@@ -1288,10 +1550,10 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1200.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1348,19 +1610,27 @@
 		"selected_items":
 		[
 			[
-				"read",
-				"README.md"
-			],
-			[
 				"",
 				"Gruntfile.js"
 			],
 			[
-				"grun",
+				"grunt",
 				"Gruntfile.js"
 			],
 			[
-				"grunt",
+				"packg",
+				"package.json"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"about",
+				"app\\app\\component\\about\\aboutController.js"
+			],
+			[
+				"grun",
 				"Gruntfile.js"
 			],
 			[
@@ -1378,10 +1648,6 @@
 			[
 				".gi",
 				".gitignore"
-			],
-			[
-				"about",
-				"app\\app\\component\\about\\aboutController.js"
 			],
 			[
 				"index",
@@ -1729,7 +1995,7 @@
 		[
 			[
 				"",
-				"C:\\dev\\vv\\vv.sublime-project"
+				"C:\\dev\\yo-ng-gen\\yeoman-angular-seed.sublime-project"
 			],
 			[
 				"bas",

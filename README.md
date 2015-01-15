@@ -78,7 +78,10 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - [x] watching for file changes 
   - [x] compiling sass
   - [x] unit tests
+  - [x] copy templates to distribution folder
   - [-] cleaning up old files and paths
+  - [-] css does not get minified and copied from the .tmp/style/app.css -> dist/style/
+  - [x] fixing javascript minification
   - [ ] distribution
 3. [x] Switched to ui-router:
   - $ bower uninstall angular-router --save
@@ -91,3 +94,7 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - $ npm install grunt-notify --save-dev
 6. [ ] Switched from jasmine to Mocha/Sinon
 7. [ ] Write some meaningfull tests
+
+
+# Future
+1. research or templates could be concatenated as well as now each template is an http request

@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     js    : 'app/app/**/*.js',
     sass  : 'app/asset/sass/*.scss',
     html  : 'app/app/**/*.html',
-    tmpCss: '.tmp/styles/{,*/}*.css',
+    tmpCss: '.tmp/style/{,*/}*.css',
     image : 'app/asset/image/*.{png,jpg,jpeg,gif,webp,svg}',
     test  : 'test/spec/{,*/}*.js'
   };
@@ -131,7 +131,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Make sure code styles are up to par and there are no obvious mistakes
+    // Make sure code style are up to par and there are no obvious mistakes
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -166,7 +166,7 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
 
-    // Add vendor prefixed styles
+    // Add vendor prefixed style
     autoprefixer: {
       options: {
         browsers: ['last 1 version']
@@ -174,9 +174,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/styles/',
+          cwd: '.tmp/style/',
           src: '{,*/}*.css',
-          dest: '.tmp/styles/'
+          dest: '.tmp/style/'
         }]
       }
     },
@@ -188,7 +188,7 @@ module.exports = function (grunt) {
         ignorePath:  /\.\.\//
       },
       sass: {
-        src: ['<%= folder.source %>/styles/{,*/}*.{scss,sass}'],
+        src: ['<%= folder.source %>/style/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
@@ -197,22 +197,22 @@ module.exports = function (grunt) {
     compass: {
       options: {
         sassDir: 'app/asset/sass',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= folder.source %>/images',
+        cssDir: '.tmp/style',
+        generatedImagesDir: '.tmp/image/generated',
+        imagesDir: '<%= folder.source %>/image',
         javascriptsDir: 'app/app/',
-        fontsDir: '<%= folder.source %>/styles/fonts',
+        fontsDir: '<%= folder.source %>/style/font',
         importPath: './bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
+        httpImagesPath: '/image',
+        httpGeneratedImagesPath: '/image/generated',
+        httpFontsPath: '/style/font',
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
       },
       dist: {
         options: {
-          generatedImagesDir: '<%= folder.distribution %>/images/generated'
+          generatedImagesDir: '<%= folder.distribution %>/image/generated'
         }
       },
       server: {
@@ -222,10 +222,11 @@ module.exports = function (grunt) {
       }
     },
 
-    // removes any console logs from javascript code
+    // removes any console logs from javascript code. 
+    // NOTE: Does not work on minified files and seems to remove the WHOLE LINE from where it finds a log.
     removelogging: {
         dist: {
-            src: '<%= folder.distribution %>/scripts/*.js'// Each file will be overwritten with the output!
+            src: '.tmp/concat/{,*/}*.js'// Each file will be overwritten with the output!
         }
     },
 
@@ -233,10 +234,11 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= folder.distribution %>/scripts/{,*/}*.js',
-          '<%= folder.distribution %>/styles/{,*/}*.css',
-          '<%= folder.distribution %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= folder.distribution %>/styles/fonts/*'
+          '<%= folder.distribution %>/script/{,*/}*.js',
+          '<%= folder.distribution %>/app/{,*/}*.js',
+          '<%= folder.distribution %>/style/{,*/}*.css',
+          '<%= folder.distribution %>/image/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= folder.distribution %>/style/font/*'
         ]
       }
     },
@@ -252,6 +254,8 @@ module.exports = function (grunt) {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
+              // js: ['concat'],
+
               css: ['cssmin']
             },
             post: {}
@@ -263,9 +267,9 @@ module.exports = function (grunt) {
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
       html: ['<%= folder.distribution %>/{,*/}*.html'],
-      css: ['<%= folder.distribution %>/styles/{,*/}*.css'],
+      css: ['<%= folder.distribution %>/style/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= folder.distribution %>','<%= folder.distribution %>/images']
+        assetsDirs: ['<%= folder.distribution %>','<%= folder.distribution %>/image']
       }
     },
 
@@ -273,9 +277,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= folder.source %>/images',
+          cwd: '<%= folder.source %>/image',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= folder.distribution %>/images'
+          dest: '<%= folder.distribution %>/image'
         }]
       }
     },
@@ -284,9 +288,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= folder.source %>/images',
+          cwd: '<%= folder.source %>/image',
           src: '{,*/}*.svg',
-          dest: '<%= folder.distribution %>/images'
+          dest: '<%= folder.distribution %>/image'
         }]
       }
     },
@@ -315,9 +319,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
+          cwd: '.tmp/concat/script',
           src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
+          dest: '.tmp/concat/script'
         }]
       }
     },
@@ -342,22 +346,29 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             '<%= path.html %>',
-            'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*',
-            // 'app/**/*.*'
+            'image/{,*/}*.{webp}',
+            'font/{,*/}*.*'
           ]
         }, {
           expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= folder.distribution %>/images',
+          cwd: '.tmp/image',
+          dest: '<%= folder.distribution %>/image',
           src: ['generated/*']
-        }]
-      },
-      styles: {
+        }, {
+          expand: true,
+          cwd: '<%= folder.app %>',
+          dest: '<%= folder.distribution %>/app',
+          src: ['**/*.html']
+        }
+      ]},
+      style: {
         expand: true,
-        cwd: '<%= folder.source %>/styles',
-        dest: '.tmp/styles/',
+        cwd: '<%= folder.source %>/style',
+        dest: '.tmp/style/',
         src: '{,*/}*.css'
+      },
+      moveScript: {
+
       }
     },
 
@@ -417,14 +428,15 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'ngAnnotate',
+    'removelogging',
     'copy:dist',
+    // 'copy:distView'
     'cdnify',
     'cssmin',
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin',
-    'removelogging'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
