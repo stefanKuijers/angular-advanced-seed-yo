@@ -520,26 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/index.html",
+			"file": "app/asset/sass/_base.scss",
 			"settings":
 			{
-				"buffer_size": 2872,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/app/shared/api/apiService.js",
-			"settings":
-			{
-				"buffer_size": 901,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 2820,
+				"buffer_size": 1685,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,125 +531,18 @@
 			"file": "Gruntfile.js",
 			"settings":
 			{
-				"buffer_size": 10422,
+				"buffer_size": 10402,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dist/views/main.html",
+			"contents": "angular-advanced-seed-yo\n========================\n\n# Description\nAn angular seed for medium to large web applications.\nThe base was generated using the yeoman angular generator.\n\nThe purpose of this seed is to make it easy to start of angular projects in a proper workflow.\n\n\n# Distributing the workflow\nIn case you want to use this workflow or distibute it to colleagues follow the following steps.\n\n## Prerequisits\nThese are dependencies of which you probably already have most installed.\n\n1. Node, Git and Ruby installed\n2. $ npm install -g grunt-cli && npm install -g bower\n3. $ (gem install sass) && gem install compass\n\n## Kickstart your project\nWhen you have successfully installed the prerequisits\n1. (optionally fork first) Clone repo \n2. $ npm install && bower install\n3. $ cd <>\n\n\n# Initial Setup\nTo setup this repo I went through the following steps\n\n## Prerequisits\nBefore you start make sure your username does not contain accented latin characters.\n\n1. Node installed\n2. Git installed\n3. $ npm install -g grunt-cli\n4. $ npm install -g yo\n5. $ npm install -g bower\n6. Ruby installed\n7. $ gem install sass \n  If any problems with a certificate download the gem via http.\n  Set the source to try on http if https fails by the following command\n  - $ gem sources --add http://rubygems.org \n8. $ gem install compass\n\n## Installation\n1. $ npm install -g generator-angular\n2. $ mkdir \\<folderName\\> && cd $_\n3. $ yo angular \\<appName\\>\n  - Sass? Y\n  - Twitter Bootstrap? n\n  - Choose Angular modules\n4. $ bower install bootstrap-css-only --save\n5. $ bower install font-awesome --save\n\n## Verifing installation\n1. Check or folders are created\n2. Check or basic grunt commands run\n  - $ grunt \n  - $ grunt test\n3. Run the grunt server ( $ grunt serve )\n\n## Installing further components and modules to enhance workflow\n1. $ bower install bootstrap-css-only --save\n  --save saves the plugin as a dependency of the project.\n  If someone clones the repo they only have to run [$ bower install]\n  and they get all bower components they need\n1. $ bower install font-awesome --save \n3. $ npm install grunt-remove-logging --save-dev \n  --save-dev saves it as a development dependency\n\n## Further Adjustments\nTo make this repo fit as a seed for medium to large scale apps I decided to make more changes. If you just want to get started with Yeoman and Angular your journey ends here. I you want to use this seed project as is you can follow the instructions in the 'Distributing Workflow' section. I have implemented the following changes:\n1. [ ] Restructured the app after the component-grouped paradigm\n2. [ ] Updating all the grunt tasks to work again\n  - [x] setting up new structure\n  - [x] watching for file changes \n  - [x] compiling sass\n  - [x] unit tests\n  - [-] cleaning up old files and paths\n  - [ ] distribution\n3. [x] Switched to ui-router:\n  - $ bower uninstall angular-router --save\n  - $ bower install ui-router --save\n  - rewrote the router code\n4. [x] Installing angular bootstrap\n  - $ bower install angular-bootstrap --save\n  - if you have any problems just go to http://angular-ui.github.io/bootstrap/ and download it from there\n5. [ ] Setup grunt notify:\n  - $ npm install grunt-notify --save-dev\n6. [ ] Switched from jasmine to Mocha/Sinon\n7. [ ] Write some meaningfull tests\n",
+			"file": "README.md",
+			"file_size": 3004,
+			"file_write_time": 130657797514672059,
 			"settings":
 			{
-				"buffer_size": 656,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 52,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "'use strict';\n\nangular.module('aas.component.about.controller', ['aas.shared.api.service'])\n    .controller('AboutController', ['API', function(API) {\n        var vm = this;\n\n        console.log( API );\n\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);",
-			"file": "app/app/component/about/aboutController.js",
-			"file_size": 372,
-			"file_write_time": 130657342584535735,
-			"settings":
-			{
-				"buffer_size": 353,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\000034}}\n.browsehappy {\n  margin: 0.2em 0;\n  background: #ccc;\n  color: #000;\n  padding: 0.2em 0;\n}\n\n/* Space out content a bit */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000313}}\nbody {\n  padding-top: 20px;\n  padding-bottom: 20px;\n}\n\n/* Everything but the jumbotron gets side spacing for mobile first views */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000320}}\n.header,\n.marketing,\n.footer {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n\n/* Custom page header */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000328}}\n.header {\n  border-bottom: 1px solid #e5e5e5;\n  /* Make the masthead heading the same height as the navigation */\n}\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000332}}\n.header h3 {\n  margin-top: 0;\n  margin-bottom: 0;\n  line-height: 40px;\n  padding-bottom: 19px;\n}\n\n/* Custom page footer */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000341}}\n.footer {\n  padding-top: 19px;\n  color: #777;\n  border-top: 1px solid #e5e5e5;\n}\n\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000347}}\n.container-narrow > hr {\n  margin: 30px 0;\n}\n\n/* Main marketing message and sign up button */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000352}}\n.jumbotron {\n  text-align: center;\n  border-bottom: 1px solid #e5e5e5;\n}\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000356}}\n.jumbotron .btn {\n  font-size: 21px;\n  padding: 14px 24px;\n}\n\n/* Supporting marketing content */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000363}}\n.marketing {\n  margin: 40px 0;\n}\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000366}}\n.marketing p + h4 {\n  margin-top: 28px;\n}\n\n/* Responsive: Portrait tablets and up */\n@media screen and (min-width: 768px) {\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000373}}\n  .container {\n    max-width: 730px;\n  }\n\n  /* Remove the padding we set earlier */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000378}}\n  .header,\n  .marketing,\n  .footer {\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  /* Space out the masthead */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000385}}\n  .header {\n    margin-bottom: 30px;\n  }\n\n  /* Remove the bottom border on the jumbotron for visual effect */\n@media -sass-debug-info{filename{font-family:file\\:\\/\\/c\\:\\/dev\\/aas-yeoman\\/app\\/styles\\/main\\.scss}line{font-family:\\0000389}}\n  .jumbotron {\n    border-bottom: 0;\n  }\n}\n",
-			"file": ".tmp/styles/main.css",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 3386,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/S/AppData/Roaming/Sublime Text 3/Packages/User/js_example_snippet.sublime-snippet",
-			"settings":
-			{
-				"buffer_size": 363,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/styles/main.scss",
-			"settings":
-			{
-				"buffer_size": 1478,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/asset/sass/app.scss",
-			"settings":
-			{
-				"buffer_size": 304,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/asset/sass/_variables.scss",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/asset/sass/_base.scss",
-			"settings":
-			{
-				"buffer_size": 1670,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test/spec/controllers/main.js",
-			"settings":
-			{
-				"buffer_size": 508,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 1203,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dist/index.html",
-			"settings":
-			{
-				"buffer_size": 1128,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/app/app.module.js",
-			"settings":
-			{
-				"buffer_size": 284,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/app/app.router.js",
-			"settings":
-			{
-				"buffer_size": 1317,
+				"buffer_size": 3299,
 				"line_ending": "Windows"
 			}
 		}
@@ -1010,12 +887,31 @@
 	[
 		"/C/dev/aas-yeoman",
 		"/C/dev/aas-yeoman/app",
-		"/C/dev/aas-yeoman/test",
-		"/C/dev/aas-yeoman/test/spec",
-		"/C/dev/aas-yeoman/test/spec/controllers"
+		"/C/dev/aas-yeoman/dist",
+		"/C/dev/aas-yeoman/dist/styles"
 	],
 	"file_history":
 	[
+		"/C/dev/aas-yeoman/.editorconfig",
+		"/C/dev/aas-yeoman/.bowerrc",
+		"/C/dev/aas-yeoman/app/app/app.router.js",
+		"/C/dev/aas-yeoman/app/app/app.module.js",
+		"/C/dev/aas-yeoman/package.json",
+		"/C/dev/aas-yeoman/test/spec/controllers/main.js",
+		"/C/dev/aas-yeoman/app/asset/sass/_base.scss",
+		"/C/dev/aas-yeoman/app/asset/sass/_variables.scss",
+		"/C/dev/aas-yeoman/app/asset/sass/app.scss",
+		"/C/dev/aas-yeoman/app/styles/main.scss",
+		"/C/Users/S/AppData/Roaming/Sublime Text 3/Packages/User/js_example_snippet.sublime-snippet",
+		"/C/dev/aas-yeoman/.tmp/styles/main.css",
+		"/C/dev/aas-yeoman/app/app/component/about/aboutController.js",
+		"/C/dev/aas-yeoman/.gitignore",
+		"/C/dev/aas-yeoman/dist/images/yeoman.5cff96e1.png",
+		"/C/dev/aas-yeoman/dist/views/main.html",
+		"/C/dev/aas-yeoman/Gruntfile.js",
+		"/C/dev/aas-yeoman/README.md",
+		"/C/dev/aas-yeoman/app/app/shared/api/apiService.js",
+		"/C/dev/aas-yeoman/app/index.html",
 		"/C/dev/aas-yeoman/.sass-cache/603178942ee4c6e61122dae790c2a2d014ca409e/_base.scssc",
 		"/C/dev/aas-yeoman/node_modules/karma/node_modules/log4js/lib/streams/BaseRollingFileStream.js",
 		"/C/dev/aas-yeoman/bower_components/font-awesome/scss/_extras.scss",
@@ -1024,7 +920,6 @@
 		"/C/dev/aas-yeoman/.sass-cache/603178942ee4c6e61122dae790c2a2d014ca409e/app.scssc",
 		"/C/dev/aas-yeoman/aasyo.sublime-project",
 		"/C/dev/aas-yeoman/.gitattributes",
-		"/C/dev/aas-yeoman/.bowerrc",
 		"/C/dev/aas-yeoman/node_modules/grunt-ng-annotate/node_modules/ng-annotate/node_modules/acorn/tools/generate-identifier-regex.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-google-cdn/node_modules/bower/lib/core/resolvers/GitResolver.js",
 		"/C/dev/aas-yeoman/test/spec/controllers/about.js",
@@ -1040,35 +935,26 @@
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/shelljs/src/toEnd.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-karma/TODO.md",
 		"/C/dev/aas-yeoman/app/app/component/about/aboutView.html",
-		"/C/dev/aas-yeoman/app/app/component/about/aboutController.js",
 		"/C/dev/aas-yeoman/test/karma.conf.js",
-		"/C/dev/aas-yeoman/test/spec/controllers/main.js",
 		"/C/dev/aas-yeoman/bower_components/es5-shim/Makefile",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/lib/mozilla-ast.js",
 		"/C/dev/aas-yeoman/.sass-cache/b4ea2d8d220de07819659396c12f1507b717fb06/main.scssc",
 		"/C/dev/aas-yeoman/node_modules/karma/bin/karma",
 		"/C/dev/aas-yeoman/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/png-alpha.json",
-		"/C/dev/aas-yeoman/package.json",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/.bin/uglifyjs",
 		"/C/dev/aas-yeoman/app/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/optimist/example/boolean_double.js",
 		"/C/dev/aas-yeoman/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/uglify-to-browserify/index.js",
 		"/C/dev/aas-yeoman/src/app/app.module.js",
-		"/C/dev/aas-yeoman/app/app/app.router.js",
-		"/C/dev/aas-yeoman/app/app/app.module.js",
 		"/C/dev/aas-yeoman/node_modules/grunt/appveyor.yml",
 		"/C/dev/aas-yeoman/app/scripts/app.js",
 		"/C/dev/aas-yeoman/bower.json",
 		"/C/dev/aas-yeoman/src/asset/sass/_base.scss",
-		"/C/dev/aas-yeoman/README.md",
 		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js",
 		"/C/dev/aas-yeoman/src/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.min.js",
 		"/C/dev/aas-yeoman/app/404.html",
-		"/C/dev/aas-yeoman/app/index.html",
-		"/C/dev/aas-yeoman/Gruntfile.js",
 		"/C/dev/aas-yeoman/app/app/component/home/homeView.html",
 		"/C/dev/aas-yeoman/app/app/component/home/homeController.js",
-		"/C/dev/aas-yeoman/app/app/shared/api/apiService.js",
 		"/C/dev/aas-yeoman/src/index.html",
 		"/C/dev/aas-yeoman/src/asset/sass/app.scss",
 		"/C/dev/aas-yeoman/src/asset/sass/_variables.scss",
@@ -1133,17 +1019,7 @@
 		"/C/dev/vv/assets/js/survey-list.js",
 		"/C/dev/vv/script.php",
 		"/C/dev/vv/view_admin/page_survey_add.php",
-		"/C/dev/vv/view_survey/page_surveytemplate2.php",
-		"/C/dev/vv/view_survey/page_surveytemplate1.php",
-		"/C/dev/vv/view_survey/page_survey.php",
-		"/C/dev/vv/view_admin/page_404.php",
-		"/C/dev/vv/model/Page.php",
-		"/C/dev/vv/assets/js/survey-question-detail-search.js",
-		"/C/dev/vv/assets/js/survey-question-detail-charts.js",
-		"/C/dev/vv/assets/js/survey-question-detail.js",
-		"/C/dev/vv/view_admin/page_survey_question-detail.php",
-		"/C/dev/vv/include/ExtensionIterator.php",
-		"/C/dev/vv/vendor/symfony/config/Symfony/Component/Config/Definition/EnumNode.php"
+		"/C/dev/vv/view_survey/page_surveytemplate2.php"
 	],
 	"find":
 	{
@@ -1331,29 +1207,29 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/index.html",
+					"file": "app/asset/sass/_base.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2872,
+						"buffer_size": 1685,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								712,
-								712
+								311,
+								311
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1364,30 +1240,30 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/app/shared/api/apiService.js",
+					"file": "Gruntfile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 901,
+						"buffer_size": 10402,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								4732,
+								4732
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 3480.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1396,15 +1272,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2820,
+						"buffer_size": 3299,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2094,
-								2094
+								577,
+								577
 							]
 						],
 						"settings":
@@ -1412,440 +1288,10 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 573.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Gruntfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10422,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3697,
-								3697
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2588.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "dist/views/main.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 656,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"file": "dist/images/yeoman.5cff96e1.png",
-					"semi_transient": false,
-					"stack_index": 6,
-					"type": "image"
-				},
-				{
-					"buffer": 5,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 52,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								52,
-								52
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/app/component/about/aboutController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 353,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								237,
-								237
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": ".tmp/styles/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3386,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								647,
-								647
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/C/Users/S/AppData/Roaming/Sublime Text 3/Packages/User/js_example_snippet.sublime-snippet",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 363,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								343,
-								343
-							]
-						],
-						"settings":
-						{
-							"default_extension": "sublime-snippet",
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/styles/main.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1478,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								1478
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/asset/sass/app.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 304,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								91,
-								91
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "app/asset/sass/_variables.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "app/asset/sass/_base.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1670,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								204,
-								204
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "test/spec/controllers/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								314,
-								314
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1203,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								886,
-								886
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "dist/index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "app/app/app.module.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								142,
-								142
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "app/app/app.router.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1317,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								137,
-								137
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
 					"type": "text"
 				}
 			]
@@ -1902,12 +1348,24 @@
 		"selected_items":
 		[
 			[
-				"_base",
-				"app\\asset\\sass\\_base.scss"
+				"read",
+				"README.md"
+			],
+			[
+				"",
+				"Gruntfile.js"
 			],
 			[
 				"grun",
 				"Gruntfile.js"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"_base",
+				"app\\asset\\sass\\_base.scss"
 			],
 			[
 				"pack",
@@ -1918,24 +1376,12 @@
 				"dist\\app\\app.router.js"
 			],
 			[
-				"grunt",
-				"Gruntfile.js"
-			],
-			[
 				".gi",
 				".gitignore"
 			],
 			[
-				"",
-				"Gruntfile.js"
-			],
-			[
 				"about",
 				"app\\app\\component\\about\\aboutController.js"
-			],
-			[
-				"read",
-				"README.md"
 			],
 			[
 				"index",
@@ -2283,7 +1729,7 @@
 		[
 			[
 				"",
-				"C:\\dev\\ot_dashboard\\ot_dachboard.sublime-project"
+				"C:\\dev\\vv\\vv.sublime-project"
 			],
 			[
 				"bas",
@@ -2323,7 +1769,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": false,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 307.0,
 	"status_bar_visible": true,
 	"template_settings":

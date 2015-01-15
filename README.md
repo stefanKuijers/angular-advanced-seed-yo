@@ -5,11 +5,33 @@ angular-advanced-seed-yo
 An angular seed for medium to large web applications.
 The base was generated using the yeoman angular generator.
 
-# Setup
+The purpose of this seed is to make it easy to start of angular projects in a proper workflow.
+
+
+# Distributing the workflow
+In case you want to use this workflow or distibute it to colleagues follow the following steps.
+
+## Prerequisits
+These are dependencies of which you probably already have most installed.
+
+1. Node, Git and Ruby installed
+2. $ npm install -g grunt-cli && npm install -g bower
+3. $ (gem install sass) && gem install compass
+
+## Kickstart your project
+When you have successfully installed the prerequisits
+1. (optionally fork first) Clone repo && cd into folder
+2. $ npm install && bower install
+3. grunt serve
+4. start coding
+
+
+# Initial Setup
 To setup this repo I went through the following steps
 
-## Prequisits
-Before you start make sure your username does not contain accented latin characters
+## Prerequisits
+Before you start make sure your username does not contain accented latin characters.
+
 1. Node installed
 2. Git installed
 3. $ npm install -g grunt-cli
@@ -56,7 +78,7 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - [x] watching for file changes 
   - [x] compiling sass
   - [x] unit tests
-  - [ ] cleaning up old files and paths
+  - [-] cleaning up old files and paths
   - [ ] distribution
 3. [x] Switched to ui-router:
   - $ bower uninstall angular-router --save
@@ -69,12 +91,3 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - $ npm install grunt-notify --save-dev
 6. [ ] Switched from jasmine to Mocha/Sinon
 7. [ ] Write some meaningfull tests
-
-# Distributing the workflow
-In case you want to use this workflow or distibute it to other colleagues follow the following steps.
-
-1. Make sure Setup > Prequisits are fullfilled on the computer
-2. Clone repo 
-3. $ npm install
-4. $ bower install
-5. 
