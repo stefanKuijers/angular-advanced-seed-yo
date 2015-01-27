@@ -16,7 +16,14 @@ describe('Controller: AboutCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    // expect(scope.awesomeThings.length).toBe(3);
+  it('should say hello', function () {
+    expect( scope.helloTo('Laci') ).toBe( 'Hello Laci');    
+  });
+
+  it('should popup after clicking on the button', function () {
+    $('.js-class-bla').trigger('click');
+
+    expect( $('.js-popup').is(':visible') ).toBe( true );
+
   });
 });

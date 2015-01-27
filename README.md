@@ -19,7 +19,8 @@ These are dependencies of which you probably already have most installed.
 3. $ (gem install sass) && gem install compass
 
 ## Kickstart your project
-When you have successfully installed the prerequisits
+When you have successfully installed the prerequisits.
+
 1. (optionally fork first) Clone repo && cd into folder
 2. $ npm install && bower install
 3. grunt serve
@@ -70,6 +71,14 @@ Before you start make sure your username does not contain accented latin charact
 3. $ npm install grunt-remove-logging --save-dev 
   --save-dev saves it as a development dependency
 
+## Speeding up Compass compilation
+Compass is a great library but the compilation it does within grunt is very slow. With the original setup it took about 4.7 seconds before livereload was triggered by the browser after compiling sass to css. After going through the following steps the reload triggers in under 20ms.
+
+1. Create a concurrent task to do the watch see Gruntfile.js at the concurrent.watch task. Be sure to set enable logging as in the example
+2. Update Compass.watch to set option 'watch' to true. This enables the native Compass watch function
+3. Add the concurrent.server to the serve task.
+4.
+
 ## Further Adjustments
 To make this repo fit as a seed for medium to large scale apps I decided to make more changes. If you just want to get started with Yeoman and Angular your journey ends here. I you want to use this seed project as is you can follow the instructions in the 'Distributing Workflow' section. I have implemented the following changes:
 1. [ ] Restructured the app after the component-grouped paradigm
@@ -82,6 +91,7 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - [-] cleaning up old files and paths
   - [-] css does not get minified and copied from the .tmp/style/app.css -> dist/style/
   - [x] fixing javascript minification
+  - [ ] minify all views
   - [ ] distribution
 3. [x] Switched to ui-router:
   - $ bower uninstall angular-router --save

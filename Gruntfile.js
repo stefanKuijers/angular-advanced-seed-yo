@@ -36,8 +36,10 @@ module.exports = function (grunt) {
     sass  : 'app/asset/sass/*.scss',
     html  : 'app/app/**/*.html',
     tmpCss: '.tmp/style/{,*/}*.css',
+    css   : 'app/asset/css/*.css',
     image : 'app/asset/image/*.{png,jpg,jpeg,gif,webp,svg}',
-    test  : 'test/spec/{,*/}*.js'
+    test  : 'test/spec/{,*/}*.js',
+    index : 'app/index.html'
   };
 
   // Define the configuration for all the tasks
@@ -65,10 +67,14 @@ module.exports = function (grunt) {
         files: ['<%= path.test %>'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      compass: {
-        files: ['<%= path.sass %>'],
-        tasks: ['compass:server', 'autoprefixer']
-      },
+      // compass: {
+      //   files: ['<%= path.sass %>'],
+      //   tasks: ['compass:server', 'autoprefixer']
+      // },
+      // sass: {
+      //   files: ['<%= path.sass %>'],
+      //   tasks: ['sass', 'autoprefixer']
+      // },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -78,8 +84,9 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= path.html %>',
-          '<%= path.tmpCss %>',
-          '<%= path.image %>'
+          '<%= path.css %>',
+          '<%= path.image %>',
+          '<%= path.index %>'
         ]
       }
     },
@@ -188,7 +195,7 @@ module.exports = function (grunt) {
         ignorePath:  /\.\.\//
       },
       sass: {
-        src: ['<%= folder.source %>/style/{,*/}*.{scss,sass}'],
+        src: ['<%= folder.source %>/style/{,*/}*.scss'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
@@ -197,7 +204,7 @@ module.exports = function (grunt) {
     compass: {
       options: {
         sassDir: 'app/asset/sass',
-        cssDir: '.tmp/style',
+        cssDir: 'app/asset/css',
         generatedImagesDir: '.tmp/image/generated',
         imagesDir: '<%= folder.source %>/image',
         javascriptsDir: 'app/app/',
@@ -217,9 +224,21 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          debugInfo: true
+          debugInfo: true,
+          watch: true
         }
       }
+    },
+
+    sass: {
+        options: {
+            sourceMap: false
+        },
+        dist: {
+            files: {
+                'app/asset/css/app.css': 'app/asset/sass/app.scss'
+            }
+        }
     },
 
     // removes any console logs from javascript code. 
@@ -374,17 +393,23 @@ module.exports = function (grunt) {
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
-      server: [
-        'compass:server'
-      ],
-      test: [
-        'compass'
-      ],
-      dist: [
-        'compass:dist',
-        'imagemin',
-        'svgmin'
-      ]
+        watch: {
+            tasks: [ 'watch', 'compass:server'],
+            options: {
+                logConcurrentOutput: true
+            }
+        },
+        server: [
+            'compass:server'
+        ],
+        test: [
+            'compass'
+        ],
+        dist: [
+            'compass:dist',
+            'imagemin',
+            'svgmin'
+        ]
     },
 
     // Test settings
@@ -405,10 +430,10 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
-      'concurrent:server',
       'autoprefixer',
       'connect:livereload',
-      'watch'
+      // 'watch',
+      'concurrent:watch'
     ]);
   });
 
@@ -444,4 +469,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('compile', ['sass']);
 };

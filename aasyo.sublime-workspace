@@ -523,7 +523,15 @@
 			"file": "app/asset/sass/_base.scss",
 			"settings":
 			{
-				"buffer_size": 1685,
+				"buffer_size": 1121,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/asset/css/app.css",
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,29 +539,23 @@
 			"file": "Gruntfile.js",
 			"settings":
 			{
-				"buffer_size": 10445,
+				"buffer_size": 11398,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "'use strict';\n\nangular\n    .module('aas.shared.api.service', [])\n    .service('API', ['$http', '$q', function( $http, $q ) {\n        console.log( 'API service loaded' );\n\n        // the API object\n        return {\n            search: function( searchterm ) {\n                console.log('API: search called');\n                var searchPromise = $q.defer();\n\n                searchPromise.notify('sending search request with searchterm: ' + searchterm + 'to the server');\n\n                $http.get('/someUrl').\n                    success(function( data ) {\n                        searchPromise.resolve( data );\n                    }).\n                    error(function( data, status, headers, config ) {\n                        searchPromise.reject( data, status, headers, config );\n                    });\n\n                return searchPromise.promise;\n            }\n        \n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.home.controller', ['aas.shared.api.service'])\n    .controller('HomeController', ['API', function(API) {\n        var vm = this;\n\n        console.log( API );\n\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.about.controller', ['aas.shared.api.service'])\n    .controller('AboutController', ['API', function(API) {\n        var vm = this;\n\n        window.console.log( API );\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module(\n    'aas.router', \n    [\n        'aas.component.home.controller',\n        'aas.component.about.controller'\n        // 'aas.component.project.controller',\n        // 'aas.component.myProfile.controller',\n    ]\n).config(\n    ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {\n\n        $stateProvider\n            .state('home', {\n                url:                     '/',\n                controller:              'HomeController',\n                controllerAs:            'homeCtrl',\n                templateUrl:             'app/component/home/homeView.html'\n            })\n            .state('about', {\n                url:                     '/about',\n                controller:              'AboutController',\n                controllerAs:            'aboutCtrl',\n                templateUrl:             'app/component/about/aboutView.html'\n            })\n            // .state('project', {\n            //     url:                     '/project/:id',\n            //     controller:              'ProjectController',\n            //     controllerAs:            'projectCtrl',\n            //     templateUrl:             'app/component/project/projectView.html'\n            // })\n        ;\n\n        $urlRouterProvider.otherwise('/');\n    }]\n);\n'use strict';\n\nwindow.App = angular.module(\n    'aas', \n    [\n      'ngAnimate',\n\n      'ui.router',\n      'ui.bootstrap',\n\n      'aas.router'\n      // 'aas.shared.layout.menu.controller'\n    ]\n).run(['$rootScope', function( $rootScope ) {\n        console.log( 'app init' );\n    }]\n);",
-			"file": "dist/scripts/scripts.js",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 3225,
-				"line_ending": "Windows"
+				"buffer_size": 2647,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "'use strict';\n\nangular\n    .module('aas.shared.api.service', [])\n    .service('API', ['$http', '$q', function( $http, $q ) {\n        \n\n        // the API object\n        return {\n            search: function( searchterm ) {\n                \n                var searchPromise = $q.defer();\n\n                searchPromise.notify('sending search request with searchterm: ' + searchterm + 'to the server');\n\n                $http.get('/someUrl').\n                    success(function( data ) {\n                        searchPromise.resolve( data );\n                    }).\n                    error(function( data, status, headers, config ) {\n                        searchPromise.reject( data, status, headers, config );\n                    });\n\n                return searchPromise.promise;\n            }\n        \n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.home.controller', ['aas.shared.api.service'])\n    .controller('HomeController', ['API', function(API) {\n        var vm = this;\n\n        \n\n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module('aas.component.about.controller', ['aas.shared.api.service'])\n    .controller('AboutController', ['API', function(API) {\n        var vm = this;\n\n        \n        vm.homeMessage = 'Hello';\n\n        vm.helloTo = function( subject ) {\n            return vm.homeMessage + ' ' + subject;\n        };\n    }]\n);\n// 'use strict';\n\nangular.module(\n    'aas.router', \n    [\n        'aas.component.home.controller',\n        'aas.component.about.controller'\n        // 'aas.component.project.controller',\n        // 'aas.component.myProfile.controller',\n    ]\n).config(\n    ['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {\n\n        $stateProvider\n            .state('home', {\n                url:                     '/',\n                controller:              'HomeController',\n                controllerAs:            'homeCtrl',\n                templateUrl:             'app/component/home/homeView.html'\n            })\n            .state('about', {\n                url:                     '/about',\n                controller:              'AboutController',\n                controllerAs:            'aboutCtrl',\n                templateUrl:             'app/component/about/aboutView.html'\n            })\n            // .state('project', {\n            //     url:                     '/project/:id',\n            //     controller:              'ProjectController',\n            //     controllerAs:            'projectCtrl',\n            //     templateUrl:             'app/component/project/projectView.html'\n            // })\n        ;\n\n        $urlRouterProvider.otherwise('/');\n    }]\n);\n'use strict';\n\nwindow.App = angular.module(\n    'aas', \n    [\n      'ngAnimate',\n\n      'ui.router',\n      'ui.bootstrap',\n\n      'aas.router'\n      // 'aas.shared.layout.menu.controller'\n    ]\n).run(['$rootScope', function( $rootScope ) {\n        \n    }]\n);",
-			"file": "dist/scripts/scripts.eb5061b9.js",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "dist/app/component/about/aboutView.html",
 			"settings":
 			{
-				"buffer_size": 3084,
+				"buffer_size": 10,
 				"line_ending": "Windows"
 			}
 		},
@@ -561,7 +563,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 1203,
+				"buffer_size": 1232,
 				"line_ending": "Unix"
 			}
 		},
@@ -571,6 +573,14 @@
 			{
 				"buffer_size": 362,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/spec/controllers/about.js",
+			"settings":
+			{
+				"buffer_size": 660,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -604,8 +614,19 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 3421,
+				"buffer_size": 3640,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "{\n  \"name\": \"project name\",\n  \"version\": \"0.1.4\",\n  \"dependencies\": {\n    \"angular\": \"^1.3.0\",\n    \"angular-animate\": \"^1.3.0\",\n    \"bootstrap-css-only\": \"~3.3.1\",\n    \"font-awesome\": \"~4.2.0\",\n    \"ui-router\": \"~0.2.13\"\n  }\n}\n",
+			"file": "bower.json",
+			"file_size": 577,
+			"file_write_time": 130657246175011876,
+			"settings":
+			{
+				"buffer_size": 227,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -618,6 +639,10 @@
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"tabs",
+				"View: Toggle Tabs"
 			],
 			[
 				"mark",
@@ -729,10 +754,6 @@
 			],
 			[
 				"toggle tab",
-				"View: Toggle Tabs"
-			],
-			[
-				"tabs",
 				"View: Toggle Tabs"
 			],
 			[
@@ -950,15 +971,24 @@
 		"/C/dev/aas-yeoman",
 		"/C/dev/aas-yeoman/app",
 		"/C/dev/aas-yeoman/app/app/component",
-		"/C/dev/aas-yeoman/app/app/component/about",
-		"/C/dev/aas-yeoman/app/app/component/home",
-		"/C/dev/aas-yeoman/app/app/shared",
-		"/C/dev/aas-yeoman/app/app/shared/api",
-		"/C/dev/aas-yeoman/dist"
+		"/C/dev/aas-yeoman/app/asset",
+		"/C/dev/aas-yeoman/app/asset/css",
+		"/C/dev/aas-yeoman/app/asset/sass",
+		"/C/dev/aas-yeoman/test/spec",
+		"/C/dev/aas-yeoman/test/spec/controllers"
 	],
 	"file_history":
 	[
+		"/C/dev/aas-yeoman/app/asset/css/app.css.map",
+		"/C/dev/aas-yeoman/bower_components/es5-shim/CHANGES",
+		"/C/dev/aas-yeoman/node_modules/karma/lib/init/color_schemes.js",
+		"/C/dev/aas-yeoman/node_modules/jasmine-core/.idea/codeStyleSettings.xml",
+		"/C/dev/aas-yeoman/app/.buildignore",
+		"/C/dev/aas-yeoman/app/.htaccess",
+		"/C/dev/aas-yeoman/app/robots.txt",
 		"/C/dev/aas-yeoman/dist/scripts/scripts.6d1a9ebf.js",
+		"/C/dev/aas-yeoman/dist/scripts/scripts.eb5061b9.js",
+		"/C/dev/aas-yeoman/dist/index.html",
 		"/C/dev/aas-yeoman/dist/scripts/scripts.js",
 		"/C/dev/aas-yeoman/aasyo.sublime-project",
 		"/C/dev/aas-yeoman/node_modules/grunt-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/region-usage-json/alt-oc.json",
@@ -1076,20 +1106,11 @@
 		"/C/dev/vv/model/Survey.php",
 		"/C/dev/vv/view_admin/header.php",
 		"/C/dev/vv/view_admin/index.php",
-		"/C/dev/vv/view_admin/head.php",
-		"/C/dev/vv/assets/css/survey.css",
-		"/C/dev/vv/vendor/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php",
-		"/C/dev/vv/vendor/monolog/monolog/src/Monolog/Handler/CubeHandler.php",
-		"/C/dev/vv/view_survey/head.php",
-		"/C/dev/vv/index.php",
-		"/C/dev/vv/vendor/phpunit/phpunit/src/Framework/Constraint/IsNull.php",
-		"/C/dev/vv/.htaccess",
-		"/C/dev/vv/view_survey/question_type1.php",
-		"/C/dev/vv/view_survey/question_type2.php"
+		"/C/dev/vv/view_admin/head.php"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 1318.0
 	},
 	"find_in_files":
 	{
@@ -1128,6 +1149,31 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"// bower:scss\n// endbower\n\n\n\n/* Space out content a bit */\nbody {\n  padding-top: 20px;\n  padding-bottom: 20px;\n  // display: none;\n}\n\n\n/* Everything but the jumbotron gets side spacing for mobile first views */\n.header,\n.marketing,\n.footer {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n\n/* Custom page header */\n.header {\n  border-bottom: 1px solid #e5e5e5;\n\n  /* Make the masthead heading the same height as the navigation */\n  h3 {\n    margin-top: 0;\n    margin-bottom: 0;\n    line-height: 40px;\n    padding-bottom: 19px;\n  }\n}\n\n/* Custom page footer */\n.footer {\n  padding-top: 19px;\n  color: #777;\n  border-top: 1px solid #e5e5e5;\n}\n\n.container-narrow > hr {\n  margin: 30px 0;\n}\n\n/* Main marketing message and sign up button */\n.jumbotron {\n  text-align: center;\n  border-bottom: 1px solid #e5e5e5;\n\n  .btn {\n    font-size: 21px;\n    padding: 14px 24px;\n  }\n}\n\n/* Supporting marketing content */\n.marketing {\n  margin: 40px 0;\n\n  p + h4 {\n    margin-top: 28px;\n  }\n}\n",
+			" '",
+			"// /*",
+			"sass",
+			"concurrent",
+			"compass",
+			"concurrent",
+			"sass",
+			"tmpCss",
+			"'<%= ",
+			"tmpCss",
+			"cssmin",
+			"sass}",
+			"compass",
+			"image",
+			"scripts",
+			"fonts",
+			"styles",
+			"images",
+			"remove",
+			"ugli",
+			"scripts",
+			".js",
+			"removelogging",
+			"copy",
 			"concat",
 			"uglifyjs",
 			"\"",
@@ -1230,32 +1276,7 @@
 			"login",
 			"login_input_username",
 			"title",
-			"$title",
-			"echo",
-			"=",
-			"Self::",
-			"CL_",
-			"Validator.php",
-			"=",
-			"compareToScan",
-			"= ",
-			"type",
-			"FS",
-			"REF_DB",
-			"tr('private')?>{",
-			"document-id",
-			"User::is(",
-			"_SESSION['user']",
-			"User::is(",
-			"User:is(",
-			"link",
-			"name-btn",
-			"saveSearchData",
-			"s_data",
-			"saveSearchData",
-			"$(\"#search\").val()",
-			"SearchTerm",
-			"searchTerm"
+			"$title"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1273,7 +1294,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1282,15 +1303,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1685,
+						"buffer_size": 1121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								311,
-								311
+								604,
+								604
 							]
 						],
 						"settings":
@@ -1298,47 +1319,19 @@
 							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 303.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Gruntfile.js",
+					"file": "app/asset/css/app.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10445,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9914,
-								9914
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 7540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "dist/scripts/scripts.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3225,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -1351,50 +1344,106 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": -0.0,
-						"translation.y": 1560.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "dist/scripts/scripts.eb5061b9.js",
+					"buffer": 2,
+					"file": "Gruntfile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3084,
+						"buffer_size": 11398,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1504,
-								1504
+								5443,
+								5443
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 720.0,
+						"translation.x": 0.0,
+						"translation.y": 3931.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								970,
+								887
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "dist/app/component/about/aboutView.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								10
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1203,
+						"buffer_size": 1232,
 						"regions":
 						{
 						},
@@ -1409,15 +1458,15 @@
 						{
 							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "app/app/component/about/aboutController.js",
 					"semi_transient": false,
 					"settings":
@@ -1429,8 +1478,8 @@
 						"selection":
 						[
 							[
-								362,
-								362
+								320,
+								320
 							]
 						],
 						"settings":
@@ -1441,11 +1490,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
+					"file": "test/spec/controllers/about.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "app/app/component/home/homeController.js",
 					"semi_transient": false,
 					"settings":
@@ -1469,11 +1546,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "app/app/app.router.js",
 					"semi_transient": false,
 					"settings":
@@ -1497,11 +1574,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "app/app/app.module.js",
 					"semi_transient": false,
 					"settings":
@@ -1513,8 +1590,8 @@
 						"selection":
 						[
 							[
-								284,
-								284
+								122,
+								122
 							]
 						],
 						"settings":
@@ -1525,24 +1602,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 11,
 					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3421,
+						"buffer_size": 3640,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2845,
-								2845
+								3037,
+								3037
 							]
 						],
 						"settings":
@@ -1553,6 +1630,34 @@
 						"translation.y": 1200.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								227,
+								227
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 6,
 					"type": "text"
 				}
@@ -1561,7 +1666,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 40.0
 	},
 	"input":
 	{
@@ -1614,6 +1719,26 @@
 				"Gruntfile.js"
 			],
 			[
+				"_",
+				"app\\asset\\sass\\_base.scss"
+			],
+			[
+				"index",
+				"app\\index.html"
+			],
+			[
+				"inde",
+				"app\\index.html"
+			],
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
 				"grunt",
 				"Gruntfile.js"
 			],
@@ -1622,16 +1747,8 @@
 				"package.json"
 			],
 			[
-				"read",
-				"README.md"
-			],
-			[
 				"about",
 				"app\\app\\component\\about\\aboutController.js"
-			],
-			[
-				"grun",
-				"Gruntfile.js"
 			],
 			[
 				"_base",
@@ -1648,14 +1765,6 @@
 			[
 				".gi",
 				".gitignore"
-			],
-			[
-				"index",
-				"app\\index.html"
-			],
-			[
-				"inde",
-				"app\\index.html"
 			],
 			[
 				"kar",
@@ -1995,7 +2104,11 @@
 		[
 			[
 				"",
-				"C:\\dev\\yo-ng-gen\\yeoman-angular-seed.sublime-project"
+				"C:\\dev\\ot_system\\ot_system.sublime-project"
+			],
+			[
+				"basis",
+				"C:\\dev\\basic-grunt\\basic-grunt.sublime-project"
 			],
 			[
 				"bas",
@@ -2036,7 +2149,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 307.0,
+	"side_bar_width": 334.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
