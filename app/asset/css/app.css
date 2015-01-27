@@ -1,0 +1,6 @@
+/* Space out content a bit */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/dev\/aas-yeoman\/app\/asset\/sass\/_base\.scss}line{font-family:\000037}}
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

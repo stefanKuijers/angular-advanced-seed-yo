@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     js    : 'app/app/**/*.js',
     sass  : 'app/asset/sass/*.scss',
     html  : 'app/app/**/*.html',
-    tmpCss: '.tmp/style/{,*/}*.css',
+    // tmpCss: '.tmp/style/{,*/}*.css',
     css   : 'app/asset/css/*.css',
     image : 'app/asset/image/*.{png,jpg,jpeg,gif,webp,svg}',
     test  : 'test/spec/{,*/}*.js',
@@ -181,9 +181,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/style/',
-          src: '{,*/}*.css',
-          dest: '.tmp/style/'
+          cwd: '<%= folder.css %>',
+          src: '*.css',
+          dest: '<%= folder.css %>'
         }]
       }
     },
@@ -195,7 +195,7 @@ module.exports = function (grunt) {
         ignorePath:  /\.\.\//
       },
       sass: {
-        src: ['<%= folder.source %>/style/{,*/}*.scss'],
+        src: ['<%= folder.sass %>{,*/}*.scss'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
@@ -203,16 +203,16 @@ module.exports = function (grunt) {
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
-        sassDir: 'app/asset/sass',
-        cssDir: 'app/asset/css',
+        sassDir: '<%= folder.sass %>',
+        cssDir: '<%= folder.css %>',
         generatedImagesDir: '.tmp/image/generated',
         imagesDir: '<%= folder.source %>/image',
         javascriptsDir: 'app/app/',
-        fontsDir: '<%= folder.source %>/style/font',
+        fontsDir: '<%= folder.css %>/font',
         importPath: './bower_components',
         httpImagesPath: '/image',
         httpGeneratedImagesPath: '/image/generated',
-        httpFontsPath: '/style/font',
+        httpFontsPath: '/css/font',
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
@@ -230,16 +230,16 @@ module.exports = function (grunt) {
       }
     },
 
-    sass: {
-        options: {
-            sourceMap: false
-        },
-        dist: {
-            files: {
-                'app/asset/css/app.css': 'app/asset/sass/app.scss'
-            }
-        }
-    },
+    // sass: {
+    //     options: {
+    //         sourceMap: false
+    //     },
+    //     dist: {
+    //         files: {
+    //             'app/asset/css/app.css': 'app/asset/sass/app.scss'
+    //         }
+    //     }
+    // },
 
     // removes any console logs from javascript code. 
     // NOTE: Does not work on minified files and seems to remove the WHOLE LINE from where it finds a log.
@@ -285,8 +285,8 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-      html: ['<%= folder.distribution %>/{,*/}*.html'],
-      css: ['<%= folder.distribution %>/style/{,*/}*.css'],
+      html: ['<%= folder.distribution %>/app/**/*.html','<%= folder.distribution %>/index.html'],
+      css: ['<%= folder.distribution %>/css/*.css'],
       options: {
         assetsDirs: ['<%= folder.distribution %>','<%= folder.distribution %>/image']
       }
@@ -326,7 +326,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= folder.distribution %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['index.html', 'app/**/*.html'],
           dest: '<%= folder.distribution %>'
         }]
       }
@@ -348,7 +348,7 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= folder.distribution %>/*.html']
+        html: ['<%= folder.distribution %>/index.html']
       }
     },
 
@@ -380,15 +380,15 @@ module.exports = function (grunt) {
           src: ['**/*.html']
         }
       ]},
-      style: {
-        expand: true,
-        cwd: '<%= folder.source %>/style',
-        dest: '.tmp/style/',
-        src: '{,*/}*.css'
-      },
-      moveScript: {
+      // style: {
+      //   expand: true,
+      //   cwd: '<%= folder.source %>/style',
+      //   dest: '.tmp/style/',
+      //   src: '{,*/}*.css'
+      // },
+      // moveScript: {
 
-      }
+      // }
     },
 
     // Run some tasks in parallel to speed up the build process

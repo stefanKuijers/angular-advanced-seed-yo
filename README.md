@@ -77,7 +77,6 @@ Compass is a great library but the compilation it does within grunt is very slow
 1. Create a concurrent task to do the watch see Gruntfile.js at the concurrent.watch task. Be sure to set enable logging as in the example
 2. Update Compass.watch to set option 'watch' to true. This enables the native Compass watch function
 3. Add the concurrent.server to the serve task.
-4.
 
 ## Further Adjustments
 To make this repo fit as a seed for medium to large scale apps I decided to make more changes. If you just want to get started with Yeoman and Angular your journey ends here. I you want to use this seed project as is you can follow the instructions in the 'Distributing Workflow' section. I have implemented the following changes:
@@ -88,8 +87,8 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - [x] compiling sass
   - [x] unit tests
   - [x] copy templates to distribution folder
-  - [-] cleaning up old files and paths
-  - [-] css does not get minified and copied from the .tmp/style/app.css -> dist/style/
+  - [x] cleaning up old files and paths
+  - [!] css does not get minified and copied from the .tmp/style/app.css -> dist/style/
   - [x] fixing javascript minification
   - [ ] minify all views
   - [ ] distribution
