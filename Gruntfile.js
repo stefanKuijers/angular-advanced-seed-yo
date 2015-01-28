@@ -208,9 +208,9 @@ module.exports = function (grunt) {
         src: [
           '<%= folder.distribution %>/script/{,*/}*.js',
           '<%= folder.distribution %>/app/{,*/}*.js',
-          '<%= folder.distribution %>/style/{,*/}*.css',
+          '<%= folder.distribution %>/css/{,*/}*.css',
           '<%= folder.distribution %>/image/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= folder.distribution %>/style/font/*'
+          '<%= folder.distribution %>/css/font/*'
         ]
       }
     },

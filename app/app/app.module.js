@@ -6,12 +6,12 @@ window.App = angular.module(
       'ngAnimate',
 
       'ui.router',
-      'ui.bootstrap',
+      'mgcrea.ngStrap',
 
       'aas.router'
       // 'aas.shared.layout.menu.controller'
     ]
 ).run(['$rootScope', function( $rootScope ) {
-        console.log( 'app init' );
+        console.log( $rootScope );
     }]
 );

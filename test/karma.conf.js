@@ -18,17 +18,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-aria/angular-aria.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-messages/angular-messages.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
-      'bower_components/ui-router/release/angular-ui-router.js',
-      'app/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js',
+      // 'bower_components/angular/angular.js',
+      // 'bower_components/angular-mocks/angular-mocks.js',
+      // 'bower_components/angular-animate/angular-animate.js',
+      // 'bower_components/angular-aria/angular-aria.js',
+      // 'bower_components/angular-cookies/angular-cookies.js',
+      // 'bower_components/angular-messages/angular-messages.js',
+      // 'bower_components/angular-resource/angular-resource.js',
+      // 'bower_components/angular-sanitize/angular-sanitize.js',
+      // 'bower_components/angular-touch/angular-touch.js',
+      // 'bower_components/ui-router/release/angular-ui-router.js',
+      // 'app/asset/lib/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js',
       'app/app/**/*.js',
       // 'test/mock/**/*.js',
       'test/spec/**/*.js'
