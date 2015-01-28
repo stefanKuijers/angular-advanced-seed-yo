@@ -67,14 +67,6 @@ module.exports = function (grunt) {
         files: ['<%= path.test %>'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      // compass: {
-      //   files: ['<%= path.sass %>'],
-      //   tasks: ['compass:server', 'autoprefixer']
-      // },
-      // sass: {
-      //   files: ['<%= path.sass %>'],
-      //   tasks: ['sass', 'autoprefixer']
-      // },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -166,11 +158,12 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= folder.distribution %>/{,*/}*',
-            '!<%= folder.distribution %>/.git{,*/}*'
+            '!<%= folder.distribution %>/.git{,*/}*',
+            '<%= folder.css %>/*.css'
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
     },
 
     // Add vendor prefixed style
@@ -200,46 +193,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
-      options: {
-        sassDir: '<%= folder.sass %>',
-        cssDir: '<%= folder.css %>',
-        generatedImagesDir: '.tmp/image/generated',
-        imagesDir: '<%= folder.source %>/image',
-        javascriptsDir: 'app/app/',
-        fontsDir: '<%= folder.css %>/font',
-        importPath: './bower_components',
-        httpImagesPath: '/image',
-        httpGeneratedImagesPath: '/image/generated',
-        httpFontsPath: '/css/font',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
-      },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= folder.distribution %>/image/generated'
-        }
-      },
-      server: {
-        options: {
-          debugInfo: true,
-          watch: true
-        }
-      }
-    },
-
-    // sass: {
-    //     options: {
-    //         sourceMap: false
-    //     },
-    //     dist: {
-    //         files: {
-    //             'app/asset/css/app.css': 'app/asset/sass/app.scss'
-    //         }
-    //     }
-    // },
 
     // removes any console logs from javascript code. 
     // NOTE: Does not work on minified files and seems to remove the WHOLE LINE from where it finds a log.
@@ -273,8 +226,6 @@ module.exports = function (grunt) {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
-              // js: ['concat'],
-
               css: ['cssmin']
             },
             post: {}
@@ -379,16 +330,43 @@ module.exports = function (grunt) {
           dest: '<%= folder.distribution %>/app',
           src: ['**/*.html']
         }
-      ]},
-      // style: {
-      //   expand: true,
-      //   cwd: '<%= folder.source %>/style',
-      //   dest: '.tmp/style/',
-      //   src: '{,*/}*.css'
-      // },
-      // moveScript: {
+      ]}
+    },
 
-      // }
+    // Compiles Sass to CSS and generates necessary files if requested
+    compass: {
+      options: {
+        sassDir: '<%= folder.sass %>',
+        cssDir: '<%= folder.css %>',
+        generatedImagesDir: '.tmp/image/generated',
+        imagesDir: '<%= folder.source %>/image',
+        javascriptsDir: 'app/app/',
+        fontsDir: '<%= folder.css %>/font',
+        importPath: './bower_components',
+        httpImagesPath: '/image',
+        httpGeneratedImagesPath: '/image/generated',
+        httpFontsPath: '/css/font',
+        relativeAssets: false,
+        assetCacheBuster: false,
+        raw: 'Sass::Script::Number.precision = 10\n'
+      },
+      dist: {
+        options: {
+            outputStyle: 'compressed',
+          generatedImagesDir: '<%= folder.distribution %>/image/generated'
+        }
+      },
+      server: {
+        options: {
+          debugInfo: true,
+          watch: true
+        }
+      },
+      build: {
+        options: {
+            debugInfo: false,
+        }
+      }
     },
 
     // Run some tasks in parallel to speed up the build process
@@ -455,7 +433,6 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'removelogging',
     'copy:dist',
-    // 'copy:distView'
     'cdnify',
     'cssmin',
     'uglify',
@@ -469,6 +446,4 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-
-  grunt.registerTask('compile', ['sass']);
 };

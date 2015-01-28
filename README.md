@@ -88,10 +88,12 @@ To make this repo fit as a seed for medium to large scale apps I decided to make
   - [x] unit tests
   - [x] copy templates to distribution folder
   - [x] cleaning up old files and paths
-  - [!] css does not get minified and copied from the .tmp/style/app.css -> dist/style/
+  - [x] css does not get minified and copied from the .tmp/style/app.css -> dist/style/
   - [x] fixing javascript minification
+  - [ ] filerev css files
   - [ ] minify all views
   - [ ] distribution
+  - [ ] test or the project can be served from the dist folder
 3. [x] Switched to ui-router:
   - $ bower uninstall angular-router --save
   - $ bower install ui-router --save
