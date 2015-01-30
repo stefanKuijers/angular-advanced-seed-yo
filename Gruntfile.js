@@ -12,41 +12,37 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+  // require('time-grunt')(grunt);
+
+  // The folder in which the developer will work. Typically called 'src' or 'app'
+  var source  = 'src';
 
   // folder names
   var folders = {
-    source      : 'app',
+    source      : source,
     test        : 'test',
     distribution: 'dist',
-    app         : 'app/app',
-    sass        : 'app/asset/sass',
-    css         : 'app/asset/css',
-    image       : 'app/asset/image',
+    app         : source + '/app',
+    sass        : source + '/asset/sass',
+    css         : source + '/asset/css',
+    image       : source + '/asset/image',
     tmp         : '.tmp'
-  };
-  // Configurable paths for the application
-  var appConfig = {
-    app: 'app',
-    dist: 'dist'
   };
 
   var paths = {
-    js    : 'app/app/**/*.js',
-    sass  : 'app/asset/sass/*.scss',
-    html  : 'app/app/**/*.html',
-    // tmpCss: '.tmp/style/{,*/}*.css',
-    css   : 'app/asset/css/*.css',
-    image : 'app/asset/image/*.{png,jpg,jpeg,gif,webp,svg}',
+    js    : folders.source + '/app/**/*.js',
+    sass  : folders.source + '/asset/sass/*.scss',
+    html  : folders.source + '/app/**/*.html',
+    css   : folders.source + '/asset/css/*.css',
+    image : folders.source + '/asset/image/*.{png,jpg,jpeg,gif,webp,svg}',
     test  : 'test/spec/{,*/}*.js',
-    index : 'app/index.html'
+    index : folders.source + '/index.html'
   };
 
   // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
-    yeoman: appConfig,
     folder: folders,
     path  : paths,
 
@@ -65,10 +61,7 @@ module.exports = function (grunt) {
       },
       jsTest: {
         files: ['<%= path.test %>'],
-        tasks: ['newer:jshint:test', 'karma']
-      },
-      gruntfile: {
-        files: ['Gruntfile.js']
+        tasks: ['karma']
       },
       livereload: {
         options: {
@@ -87,7 +80,6 @@ module.exports = function (grunt) {
     connect: {
       options: {
         port: 9000,
-        // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
       },
@@ -96,12 +88,12 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
+              // connect.static('.tmp'),
               connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
               ),
-              connect.static(appConfig.app)
+              connect.static( folders.source )
             ];
           }
         }
@@ -111,13 +103,13 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect.static('<%= path.test %>'),
+              // connect.static('.tmp'),
+              connect.static( folders.test ),
               connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
               ),
-              connect.static(appConfig.app)
+              connect.static( folders.source )
             ];
           }
         }
@@ -127,26 +119,6 @@ module.exports = function (grunt) {
           open: true,
           base: '<%= folder.distribution %>'
         }
-      }
-    },
-
-    // Make sure code style are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= path.js %>',
-        ]
-      },
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['<%= path.test %>']
       }
     },
 
@@ -340,7 +312,7 @@ module.exports = function (grunt) {
         cssDir: '<%= folder.css %>',
         generatedImagesDir: '.tmp/image/generated',
         imagesDir: '<%= folder.source %>/image',
-        javascriptsDir: 'app/app/',
+        javascriptsDir: '<%= folder.app %>',
         fontsDir: '<%= folder.css %>/font',
         importPath: './bower_components',
         httpImagesPath: '/image',
@@ -409,8 +381,8 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'autoprefixer',
-      'connect:livereload',
       // 'watch',
+      'connect:livereload',
       'concurrent:watch'
     ]);
   });
@@ -433,7 +405,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'removelogging',
     'copy:dist',
-    'cdnify',
+    // 'cdnify',
     'cssmin',
     'uglify',
     'filerev',
@@ -442,7 +414,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    // 'newer:jshint',
     'test',
     'build'
   ]);
